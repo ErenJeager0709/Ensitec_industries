@@ -1,0 +1,229 @@
+
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #252525;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* ===== ENCABEZADO ===== */
+        .menu-header {
+            background: linear-gradient(to right, #ff6b00, #ff3c00);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #ff6b00;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text span {
+            color: #ffd700;
+        }
+        
+        .qr-section {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .qr-section p {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        
+        /* ===== CATEGORÍAS ===== */
+        .menu-categories {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+        }
+        
+        .menu-categories h1 {
+            margin-bottom: 20px;
+            color: #ffd700;
+            font-size: 32px;
+        }
+        
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-buttons button {
+            padding: 12px 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .category-buttons button:hover {
+            background-color: #ff6b00;
+            transform: translateY(-3px);
+        }
+        
+        .category-buttons button.active {
+            background-color: #ff6b00;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+        }
+        
+        /* ===== ITEMS DEL MENÚ ===== */
+        .menu-items {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .menu-item {
+            background: linear-gradient(145deg, #2c2c2c, #242424);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .menu-item-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+        
+        .menu-item-content {
+            padding: 20px;
+        }
+        
+        .menu-item h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .menu-item .price {
+            font-weight: bold;
+            color: #ff6b00;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+        
+        .menu-item .description {
+            color: #ccc;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .menu-item .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6b00;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .menu-item .order-btn:hover {
+            background-color: #ff3c00;
+        }
+        
+        /* ===== FOOTER ===== */
+        .menu-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .menu-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-buttons {
+                flex-direction: column;
+            }
+            
+            .category-buttons button {
+                width: 100%;
+            }
+        }

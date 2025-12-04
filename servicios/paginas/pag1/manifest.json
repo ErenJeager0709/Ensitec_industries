@@ -1,0 +1,42 @@
+{
+  "name": "Restaurante Delicias",
+  "short_name": "Delicias",
+  "description": "Experiencia gastronómica única con menú digital y reservaciones online",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F1E6",
+  "theme_color": "#2C5530",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["food", "lifestyle", "business"],
+  "screenshots": [
+    {
+      "src": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Vista principal del restaurante"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver Menú",
+      "short_name": "Menú",
+      "description": "Explora nuestro menú digital",
+      "url": "/#menu",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>" }]
+    },
+    {
+      "name": "Reservar Mesa",
+      "short_name": "Reservar",
+      "description": "Haz una reserva online",
+      "url": "/#reservations",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>" }]
+    }
+  ]
+}

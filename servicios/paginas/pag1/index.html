@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Restaurante Delicias | Gastronomía de Autor</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Restaurante Delicias - Experiencia gastronómica única con menú de autor y reservaciones online">
+    <meta name="keywords" content="restaurante, gastronomía, comida gourmet, reservaciones, menú digital">
+    <meta name="theme-color" content="#2C5530">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Restaurante Delicias | Gastronomía de Autor">
+    <meta property="og:description" content="Descubre una experiencia gastronómica única con nuestro menú de autor">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+    <meta property="og:url" content="https://restaurantedelicias.com">
+    
+    <!-- Preconexión -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Preloader minimalista -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="cutlery-animation">
+                <div class="fork">🍴</div>
+                <div class="knife">🔪</div>
+            </div>
+            <div class="preloader-text">Preparando experiencia gastronómica...</div>
+        </div>
+    </div>
+
+    <!-- Navegación flotante única -->
+    <nav class="floating-nav" id="floatingNav">
+        <div class="nav-container">
+            <!-- Logo animado -->
+            <a href="#home" class="nav-logo" data-section="home">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">Delicias</span>
+            </a>
+            
+            <!-- Menú principal -->
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-utensils"></i>
+                    <span>Nosotros</span>
+                </a>
+                <a href="#menu" class="nav-link" data-section="menu">
+                    <i class="fas fa-book-open"></i>
+                    <span>Menú</span>
+                </a>
+                <a href="#reservations" class="nav-link" data-section="reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservas</span>
+                </a>
+                <a href="#gallery" class="nav-link" data-section="gallery">
+                    <i class="fas fa-images"></i>
+                    <span>Galería</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacto</span>
+                </a>
+            </div>
+            
+            <!-- Acciones rápidas -->
+            <div class="nav-actions">
+                <button class="btn-reservation" onclick="scrollToSection('reservations')">
+                    <i class="fas fa-clock"></i>
+                    Reservar Mesa
+                </button>
+                
+                <!-- Toggle menú móvil -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menú de navegación">
+                    <div class="toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Indicador de sección activa -->
+        <div class="nav-indicator" id="navIndicator"></div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Hero Section - Video background -->
+        <section id="home" class="section hero-section active">
+            <div class="video-background">
+                <div class="video-overlay"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-serving-dinner-504-large.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-star">⭐</span>
+                    <span>Premiado 2024</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Sabor que</span>
+                    <span class="title-line highlight">Cuenta Historias</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Gastronomía de autor donde cada plato es una experiencia única
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="scrollToSection('menu')">
+                        <i class="fas fa-book-open"></i>
+                        Ver Menú Digital
+                    </button>
+                    <button class="btn-secondary" onclick="openTableModal()">
+                        <i class="fas fa-video"></i>
+                        Tour Virtual
+                    </button>
+                </div>
+                
+                <!-- Info rápida -->
+                <div class="hero-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lun-Dom: 12:00 - 23:00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Calle Gourmet 123, Centro</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Reservas</h4>
+                            <p>+34 912 345 678</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" onclick="scrollToSection('about')">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Descubre más</span>
+            </div>
+        </section>
+
+        <!-- About Section - Diseño asimétrico -->
+        <section id="about" class="section about-section">
+            <div class="about-container">
+                <!-- Imagen decorativa flotante -->
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="floating-ingredients">
+                        <span class="ingredient">🍅</span>
+                        <span class="ingredient">🧄</span>
+                        <span class="ingredient">🥬</span>
+                        <span class="ingredient">🌿</span>
+                    </div>
+                </div>
+                
+                <!-- Contenido -->
+                <div class="about-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Nuestra Historia</span>
+                        <h2 class="section-title">Pasión por la<br><span class="highlight">Excelencia</span></h2>
+                    </div>
+                    
+                    <div class="about-text">
+                        <p>Desde 1998, Delicias ha sido un referente en gastronomía innovadora. Nuestro chef ejecutivo, <strong>Miguel Ángel Torres</strong>, combina técnicas tradicionales con vanguardistas para crear experiencias únicas.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <div class="feature-icon">🏆</div>
+                                <h4>Premios</h4>
+                                <p>2 Estrellas Michelin y múltiples reconocimientos</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">👨‍🍳</div>
+                                <h4>Equipo</h4>
+                                <p>Chefs especializados en cocina internacional</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">🌱</div>
+                                <h4>Filosofía</h4>
+                                <p>Ingredientes locales y sostenibilidad</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">🍷</div>
+                                <h4>Bodega</h4>
+                                <p>Selección de más de 500 etiquetas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-cta" onclick="openChefStory()">
+                        <i class="fas fa-play-circle"></i>
+                        Conoce al Chef
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Estadísticas flotantes -->
+            <div class="stats-floating">
+                <div class="stat">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Platos únicos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">% Clientes satisfechos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Productores locales</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menú Section - Interactivo único -->
+        <section id="menu" class="section menu-section">
+            <div class="menu-container">
+                <div class="section-header center">
+                    <span class="section-subtitle">Especialidades</span>
+                    <h2 class="section-title">Menú <span class="highlight">Digital</span></h2>
+                    <p class="section-description">Explora nuestra selección gastronómica</p>
+                </div>
+                
+                <!-- Filtros interactivos -->
+                <div class="menu-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-star"></i>
+                            Todo el Menú
+                        </button>
+                        <button class="filter-btn" data-filter="entradas">
+                            <i class="fas fa-leaf"></i>
+                            Entradas
+                        </button>
+                        <button class="filter-btn" data-filter="principales">
+                            <i class="fas fa-drumstick-bite"></i>
+                            Principales
+                        </button>
+                        <button class="filter-btn" data-filter="postres">
+                            <i class="fas fa-ice-cream"></i>
+                            Postres
+                        </button>
+                        <button class="filter-btn" data-filter="bebidas">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            Bebidas
+                        </button>
+                    </div>
+                    
+                    <!-- Búsqueda -->
+                    <div class="menu-search">
+                        <input type="text" placeholder="Buscar plato..." id="menuSearch">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <!-- Grid de platos -->
+                <div class="dishes-grid" id="dishesGrid">
+                    <!-- Los platos se cargan dinámicamente desde menu-data.js -->
+                </div>
+                
+                <!-- Carrito flotante -->
+                <div class="cart-floating" id="cartFloating">
+                    <button class="cart-toggle" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <div class="cart-preview" id="cartPreview">
+                        <div class="cart-header">
+                            <h4>Tu Pedido</h4>
+                            <button class="cart-close" onclick="toggleCart()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="cart-items" id="cartItems">
+                            <!-- Items del carrito -->
+                        </div>
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <span class="total-amount" id="cartTotal">€0.00</span>
+                        </div>
+                        <button class="btn-checkout" onclick="openCheckoutModal()">
+                            <i class="fas fa-credit-card"></i>
+                            Confirmar Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal de detalle de plato -->
+            <div class="dish-modal" id="dishModal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeDishModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="modal-body" id="modalBody">
+                        <!-- Contenido dinámico -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservations Section - Formulario creativo -->
+        <section id="reservations" class="section reservations-section">
+            <div class="reservations-container">
+                <div class="reservations-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Reserva tu experiencia</span>
+                        <h2 class="section-title">Mesa <span class="highlight">Disponible</span></h2>
+                    </div>
+                    
+                    <div class="reservation-info">
+                        <div class="info-card">
+                            <div class="info-icon">📅</div>
+                            <h4>Reserva Online</h4>
+                            <p>Garantiza tu mesa en segundos</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">👥</div>
+                            <h4>Grupos Especiales</h4>
+                            <p>Hasta 20 personas</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">🎉</div>
+                            <h4>Eventos Privados</h4>
+                            <p>Celebraciones únicas</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario de reserva interactivo -->
+                    <div class="reservation-form-container">
+                        <form id="reservationForm" class="reservation-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservationDate">
+                                        <i class="fas fa-calendar-day"></i>
+                                        Fecha
+                                    </label>
+                                    <input type="date" id="reservationDate" required min="<?php echo date('Y-m-d'); ?>">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reservationTime">
+                                        <i class="fas fa-clock"></i>
+                                        Hora
+                                    </label>
+                                    <select id="reservationTime" required>
+                                        <option value="" disabled selected>Selecciona hora</option>
+                                        <!-- Horarios generados dinámicamente -->
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reservationGuests">
+                                        <i class="fas fa-users"></i>
+                                        Personas
+                                    </label>
+                                    <div class="guest-counter">
+                                        <button type="button" class="counter-btn" onclick="adjustGuests(-1)">-</button>
+                                        <input type="number" id="reservationGuests" value="2" min="1" max="20" readonly>
+                                        <button type="button" class="counter-btn" onclick="adjustGuests(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservationName">
+                                        <i class="fas fa-user"></i>
+                                        Nombre completo
+                                    </label>
+                                    <input type="text" id="reservationName" required placeholder="Tu nombre">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reservationEmail">
+                                        <i class="fas fa-envelope"></i>
+                                        Email
+                                    </label>
+                                    <input type="email" id="reservationEmail" required placeholder="tu@email.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reservationPhone">
+                                        <i class="fas fa-phone"></i>
+                                        Teléfono
+                                    </label>
+                                    <input type="tel" id="reservationPhone" required placeholder="+34 600 000 000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="reservationNotes">
+                                    <i class="fas fa-sticky-note"></i>
+                                    Notas especiales
+                                </label>
+                                <textarea id="reservationNotes" placeholder="Alergias, celebración especial, etc." rows="3"></textarea>
+                            </div>
+                            
+                            <!-- Selección de mesa interactiva -->
+                            <div class="table-selection">
+                                <h4>
+                                    <i class="fas fa-chair"></i>
+                                    Selecciona tu mesa preferida
+                                </h4>
+                                <div class="tables-grid" id="tablesGrid">
+                                    <!-- Mesas generadas dinámicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-reserve">
+                                    <i class="fas fa-check-circle"></i>
+                                    Confirmar Reserva
+                                </button>
+                                <button type="button" class="btn-whatsapp" onclick="reserveViaWhatsApp()">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Reservar por WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <!-- Confirmación -->
+                        <div class="reservation-confirmation" id="reservationConfirmation">
+                            <div class="confirmation-icon">✅</div>
+                            <h3>¡Reserva Confirmada!</h3>
+                            <p id="confirmationDetails"></p>
+                            <div class="confirmation-actions">
+                                <button class="btn-calendar" onclick="addToCalendar()">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Agregar al Calendario
+                                </button>
+                                <button class="btn-share" onclick="shareReservation()">
+                                    <i class="fas fa-share-alt"></i>
+                                    Compartir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vista previa de disponibilidad -->
+                <div class="availability-preview">
+                    <div class="preview-header">
+                        <h4>Disponibilidad Hoy</h4>
+                        <div class="time-slots">
+                            <span class="slot available">Disponible</span>
+                            <span class="slot limited">Limitado</span>
+                            <span class="slot booked">Reservado</span>
+                        </div>
+                    </div>
+                    <div class="availability-chart" id="availabilityChart">
+                        <!-- Gráfico de disponibilidad -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section - Mosaico creativo -->
+        <section id="gallery" class="section gallery-section">
+            <div class="gallery-container">
+                <div class="section-header center">
+                    <span class="section-subtitle">Nuestro Ambiente</span>
+                    <h2 class="section-title">Galería <span class="highlight">Visual</span></h2>
+                    <p class="section-description">Un vistazo a la experiencia Delicias</p>
+                </div>
+                
+                <!-- Filtros de galería -->
+                <div class="gallery-filters">
+                    <button class="gallery-filter active" data-filter="all">
+                        <i class="fas fa-th-large"></i>
+                        Todo
+                    </button>
+                    <button class="gallery-filter" data-filter="platos">
+                        <i class="fas fa-utensils"></i>
+                        Platos
+                    </button>
+                    <button class="gallery-filter" data-filter="ambiente">
+                        <i class="fas fa-couch"></i>
+                        Ambiente
+                    </button>
+                    <button class="gallery-filter" data-filter="eventos">
+                        <i class="fas fa-glass-cheers"></i>
+                        Eventos
+                    </button>
+                    <button class="gallery-filter" data-filter="chef">
+                        <i class="fas fa-user-chef"></i>
+                        Chef
+                    </button>
+                </div>
+                
+                <!-- Mosaico de imágenes -->
+                <div class="gallery-mosaic" id="galleryMosaic">
+                    <!-- Imágenes cargadas dinámicamente -->
+                </div>
+                
+                <!-- Lightbox -->
+                <div class="gallery-lightbox" id="galleryLightbox">
+                    <div class="lightbox-content">
+                        <button class="lightbox-close" onclick="closeLightbox()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img id="lightboxImage" alt="">
+                        <div class="lightbox-info">
+                            <h3 id="lightboxTitle"></h3>
+                            <p id="lightboxDescription"></p>
+                        </div>
+                        <div class="lightbox-nav">
+                            <button class="lightbox-prev" onclick="prevImage()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="lightbox-next" onclick="nextImage()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Mapa interactivo -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-subtitle">Visítanos</span>
+                        <h2 class="section-title">Contacto & <span class="highlight">Ubicación</span></h2>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Dirección</h4>
+                                <p>Calle Gourmet 123<br>28001 Madrid, España</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Horario</h4>
+                                <p>Lunes - Domingo<br>12:00 - 23:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Teléfono</h4>
+                                <p>+34 912 345 678</p>
+                                <p class="contact-note">Reservas recomendadas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Email</h4>
+                                <p>info@delicias.com</p>
+                                <p class="contact-note">Respuesta en 24h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes sociales -->
+                    <div class="social-contact">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                Instagram
+                            </a>
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="#" class="social-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                                TikTok
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mapa y formulario -->
+                <div class="contact-interactive">
+                    <!-- Mapa interactivo -->
+                    <div class="contact-map" id="contactMap">
+                        <div class="map-placeholder">
+                            <div class="map-marker">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <div class="map-overlay">
+                                <h4>¿Cómo llegar?</h4>
+                                <p>Estación más cercana: Sol (5 min andando)</p>
+                                <button class="btn-directions" onclick="openDirections()">
+                                    <i class="fas fa-directions"></i>
+                                    Cómo llegar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario de contacto rápido -->
+                    <div class="quick-contact-form">
+                        <h4>
+                            <i class="fas fa-comment-alt"></i>
+                            Contacto Rápido
+                        </h4>
+                        <form id="quickContactForm">
+                            <input type="text" placeholder="Tu nombre" required>
+                            <input type="email" placeholder="Email" required>
+                            <textarea placeholder="Mensaje" rows="3" required></textarea>
+                            <button type="submit" class="btn-send">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <div class="newsletter-icon">📬</div>
+                    <div class="newsletter-text">
+                        <h3>Newsletter Gourmet</h3>
+                        <p>Recibe nuestras novedades y ofertas especiales</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="tu@email.com" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer creativo -->
+    <footer class="creative-footer">
+        <div class="footer-container">
+            <!-- Logo y descripción -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span class="logo-text">Delicias</span>
+                </div>
+                <p class="footer-description">
+                    Donde cada comida es una obra de arte y cada visita, una experiencia memorable.
+                </p>
+                <div class="footer-certifications">
+                    <span class="certification">⭐ Michelin</span>
+                    <span class="certification">🏆 Excelencia</span>
+                    <span class="certification">🌱 Sostenible</span>
+                </div>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#menu">Menú Digital</a></li>
+                    <li><a href="#reservations">Reservar Mesa</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#" onclick="openPrivacyModal()">Política de Privacidad</a></li>
+                    <li><a href="#" onclick="openTermsModal()">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios especiales -->
+            <div class="footer-schedule">
+                <h4>Horarios Especiales</h4>
+                <div class="schedule-item">
+                    <span class="day">Brunch Dominical</span>
+                    <span class="time">11:00 - 15:00</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Menú Degustación</span>
+                    <span class="time">Solo con reserva</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Cenas Especiales</span>
+                    <span class="time">Viernes y Sábados</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Grupos Privados</span>
+                    <span class="time">Consultar disponibilidad</span>
+                </div>
+            </div>
+            
+            <!-- Métodos de pago -->
+            <div class="footer-payments">
+                <h4>Métodos de Pago</h4>
+                <div class="payment-methods">
+                    <span class="payment-method">💳</span>
+                    <span class="payment-method">📱</span>
+                    <span class="payment-method">🏦</span>
+                    <span class="payment-method">💰</span>
+                </div>
+                <div class="delivery-info">
+                    <h5>Servicio a Domicilio</h5>
+                    <p>Disponible en radio de 10km</p>
+                    <button class="btn-delivery" onclick="openDeliveryModal()">
+                        <i class="fas fa-motorcycle"></i>
+                        Pedir a Domicilio
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 Restaurante Delicias. Todos los derechos reservados.</p>
+                <p class="footer-heart">Hecho con ❤️ para amantes de la buena comida</p>
+            </div>
+            
+            <div class="footer-back">
+                <button class="btn-back-top" onclick="scrollToTop()">
+                    <i class="fas fa-arrow-up"></i>
+                    Volver arriba
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales globales -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <!-- Modal de pedido -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-content">
+            <!-- Contenido dinámico -->
+        </div>
+    </div>
+    
+    <!-- Modal de tour virtual -->
+    <div class="tour-modal" id="tourModal">
+        <div class="modal-content">
+            <!-- Contenido dinámico -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="menu-data.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

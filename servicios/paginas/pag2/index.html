@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cafetería Aroma | Café de Especialidad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+</head>
+<body>
+    <!-- Header con navegación responsiva -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">Cafetería <strong>Aroma</strong></span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="#horarios" class="nav-link">Horarios</a></li>
+                    <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Café con <span class="highlight">alma</span>, sabor con <span class="highlight">historia</span></h1>
+            <p class="hero-text">Descubre nuestro café de especialidad tostado artesanalmente y nuestra selección de repostería casera.</p>
+            <div class="hero-buttons">
+                <a href="menu.html" class="btn btn-primary">Ver Menú</a>
+                <a href="#ubicacion" class="btn btn-secondary">Visítanos</a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- Galería de ejemplos con filtros -->
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Nuestras Especialidades</h2>
+            <p class="section-subtitle">Descubre nuestra selección única de cafés y delicias</p>
+            
+            <!-- Botones de filtro -->
+            <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="cafe">Cafés</button>
+                <button class="filter-btn" data-filter="postres">Postres</button>
+                <button class="filter-btn" data-filter="salado">Salado</button>
+                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            </div>
+            
+            <!-- Galería de elementos -->
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="cafe">
+                    <div class="gallery-img" style="background-color: #8B4513;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Espresso Artesanal</h3>
+                        <p class="gallery-text">Nuestro espresso insignia con notas de chocolate y nuez.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="cafe">
+                    <div class="gallery-img" style="background-color: #D2691E;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Cappuccino Cremoso</h3>
+                        <p class="gallery-text">Preparado con leche orgánica y espuma perfecta.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="postres">
+                    <div class="gallery-img" style="background-color: #DEB887;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Tarta de Chocolate</h3>
+                        <p class="gallery-text">Elaborada con cacao belga y toques de vainilla.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="postres">
+                    <div class="gallery-img" style="background-color: #F4A460;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Croissant Artesanal</h3>
+                        <p class="gallery-text">Hojaldre crujiente con mantequilla de calidad superior.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="salado">
+                    <div class="gallery-img" style="background-color: #BC8F8F;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Sandwich Gourmet</h3>
+                        <p class="gallery-text">Pan de masa madre con ingredientes frescos y locales.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="bebidas">
+                    <div class="gallery-img" style="background-color: #E9967A;"></div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Té de Especialidad</h3>
+                        <p class="gallery-text">Selección de tés de importación con hierbas aromáticas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="section services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Más que una cafetería, un espacio para disfrutar</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="service-title">Café de Especialidad</h3>
+                    <p class="service-text">Granos seleccionados de fincas sostenibles, tostados en pequeñas tandas para garantizar frescura y sabor único en cada taza.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="service-title">Comida Casera</h3>
+                    <p class="service-text">Preparamos diariamente una variedad de platos y postres con ingredientes frescos y de proximidad. Todo hecho en casa.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="service-title">Espacio de Trabajo</h3>
+                    <p class="service-text">Disfruta de nuestro ambiente tranquilo con WiFi rápido, enchufes en cada mesa y la mejor compañía: una taza de café.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="service-title">Eventos y Catas</h3>
+                    <p class="service-text">Organizamos catas de café, talleres de barismo y eventos culturales. Consulta nuestra agenda mensual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios -->
+    <section class="section hours-section" id="horarios">
+        <div class="container">
+            <h2 class="section-title">Horarios</h2>
+            <p class="section-subtitle">Ven a visitarnos cuando quieras un buen café</p>
+            
+            <div class="hours-container">
+                <div class="hours-card">
+                    <div class="hours-content">
+                        <div class="hours-item">
+                            <span class="hours-day">Lunes - Viernes</span>
+                            <span class="hours-time">7:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Sábados</span>
+                            <span class="hours-time">8:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Domingos</span>
+                            <span class="hours-time">9:00 AM - 9:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="hours-note">
+                        <p><i class="fas fa-info-circle"></i> Los días festivos tenemos horario especial. Síguenos en redes para estar al día.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="section location-section" id="ubicacion">
+        <div class="container">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <p class="section-subtitle">Encuéntranos en el corazón de la ciudad</p>
+            
+            <div class="location-container">
+                <div class="location-info">
+                    <div class="location-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 class="location-title">Dirección</h3>
+                            <p class="location-text">Calle del Aroma, 123<br>Barrio Histórico<br>28001 Madrid</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3 class="location-title">Teléfono</h3>
+                            <p class="location-text">+52 729 926 6745</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3 class="location-title">Email</h3>
+                            <p class="location-text">hola@cafeteriaaroma.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-subway"></i>
+                        <div>
+                            <h3 class="location-title">Transporte</h3>
+                            <p class="location-text">Metro: Sol (Líneas 1, 2, 3)<br>Autobús: 3, 5, 9, 15, 20, 51</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Mapa interactivo de Google Maps</p>
+                        <small>Dirección: Calle del Aroma, 123, Madrid</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">¿Tienes alguna pregunta o sugerencia? Escríbenos</p>
+            
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Tu email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+                
+                <div class="contact-info">
+                    <h3 class="contact-title">Síguenos en redes sociales</h3>
+                    <p class="contact-text">Mantente al día de nuestras novedades, promociones y eventos especiales.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h4>Suscríbete a nuestro newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Tu email">
+                            <button type="submit" class="btn btn-secondary">Suscribirse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon">☕</span>
+                        <span class="logo-text">Cafetería <strong>Aroma</strong></span>
+                    </a>
+                    <p class="footer-text">Café de especialidad en un ambiente único. Desde 2015 sirviendo las mejores tazas de café con pasión y dedicación.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="#horarios">Horarios</a></li>
+                        <li><a href="#ubicacion">Ubicación</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Aviso legal</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Cafetería Aroma. Todos los derechos reservados.</p>
+                <p>Diseñado con <i class="fas fa-heart"></i> y mucho <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

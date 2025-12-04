@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Clásico | Restaurante Delicias</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="menu-wrapper">
+        <div class="menu-container">
+            <!-- Encabezado con logo y QR -->
+            <header class="menu-header">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h1>Restaurante <span>Delicias</span></h1>
+                </div>
+                <div class="header-info">
+                    <p>Desde 1995</p>
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <p>Escanea el código QR</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Categorías del Menú -->
+            <section class="menu-categories">
+                <div class="category-buttons">
+                    <button class="active" data-category="boneless">Boneless</button>
+                    <button data-category="alitas">Alitas</button>
+                    <button data-category="hamburguesas">Hamburguesas</button>
+                    <button data-category="papas">Papas</button>
+                    <button data-category="micheladas">Micheladas</button>
+                    <button data-category="bebidas">Bebidas</button>
+                </div>
+            </section>
+
+            <!-- Items del Menú -->
+            <section class="menu-items" id="menu-items">
+                <!-- Los items se generan con JavaScript -->
+            </section>
+
+            <!-- Footer -->
+            <footer class="menu-footer">
+                <p>© 2023 Restaurante Delicias. Todos los derechos reservados.</p>
+                <p>Tel: 123-456-7890 | Horario: 11:00 AM - 10:00 PM</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="menu-clasico.js"></script>
+</body>
+</html>

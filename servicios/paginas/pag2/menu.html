@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú | Cafetería Aroma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+</head>
+<body>
+    <!-- Header con navegación responsiva -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">Cafetería <strong>Aroma</strong></span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link active">Menú</a></li>
+                    <li><a href="index.html#horarios" class="nav-link">Horarios</a></li>
+                    <li><a href="index.html#ubicacion" class="nav-link">Ubicación</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Encabezado del menú -->
+    <section class="menu-header">
+        <div class="container">
+            <h1 class="menu-title">Nuestro Menú</h1>
+            <p class="menu-subtitle">Descubre nuestra selección de cafés, bebidas y delicias caseras</p>
+            
+            <!-- Categorías del menú (sticky en móviles) -->
+            <div class="menu-categories" id="menuCategories">
+                <a href="#cafe" class="category-btn active">Cafés</a>
+                <a href="#bebidas" class="category-btn">Otras Bebidas</a>
+                <a href="#dulce" class="category-btn">Dulce</a>
+                <a href="#salado" class="category-btn">Salado</a>
+                <a href="#especiales" class="category-btn">Especiales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del menú -->
+    <main class="menu-container">
+        <div class="container">
+            <!-- Sección Cafés -->
+            <section class="menu-section" id="cafe">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-coffee"></i>
+                    Cafés de Especialidad
+                </h2>
+                <p class="menu-section-desc">Nuestros granos son tostados artesanalmente cada semana para garantizar frescura y sabor.</p>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Espresso Aroma</h3>
+                            <span class="menu-item-price">€2.50</span>
+                        </div>
+                        <p class="menu-item-desc">Nuestro espresso insignia con notas de chocolate negro y avellana.</p>
+                        <button class="order-btn" data-item="Espresso Aroma">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Americano Perfecto</h3>
+                            <span class="menu-item-price">€2.80</span>
+                        </div>
+                        <p class="menu-item-desc">Espresso alargado con agua caliente para un café suave y aromático.</p>
+                        <button class="order-btn" data-item="Americano Perfecto">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Cappuccino Clásico</h3>
+                            <span class="menu-item-price">€3.20</span>
+                        </div>
+                        <p class="menu-item-desc">Perfecta proporción de espresso, leche vaporizada y espuma cremosa.</p>
+                        <button class="order-btn" data-item="Cappuccino Clásico">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Latte Artístico</h3>
+                            <span class="menu-item-price">€3.50</span>
+                        </div>
+                        <p class="menu-item-desc">Espresso con leche vaporizada y un diseño especial hecho por nuestros baristas.</p>
+                        <button class="order-btn" data-item="Latte Artístico">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Mocha Indulgento</h3>
+                            <span class="menu-item-price">€3.80</span>
+                        </div>
+                        <p class="menu-item-desc">Mezcla perfecta de espresso, chocolate belga y leche vaporizada.</p>
+                        <button class="order-btn" data-item="Mocha Indulgento">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Flat White</h3>
+                            <span class="menu-item-price">€3.30</span>
+                        </div>
+                        <p class="menu-item-desc">Doble ristretto con microespuma para un café intenso pero suave.</p>
+                        <button class="order-btn" data-item="Flat White">Pedir</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Otras Bebidas -->
+            <section class="menu-section" id="bebidas">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-glass-whiskey"></i>
+                    Otras Bebidas
+                </h2>
+                <p class="menu-section-desc">Refrescos, tés y bebidas frías para todos los gustos.</p>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Té de la Casa</h3>
+                            <span class="menu-item-price">€2.50</span>
+                        </div>
+                        <p class="menu-item-desc">Selección de tés de importación (negro, verde, rooibos, infusiones).</p>
+                        <button class="order-btn" data-item="Té de la Casa">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Chocolate Caliente Artesano</h3>
+                            <span class="menu-item-price">€3.50</span>
+                        </div>
+                        <p class="menu-item-desc">Elaborado con chocolate negro fundido y leche entera, coronado con nata.</p>
+                        <button class="order-btn" data-item="Chocolate Caliente Artesano">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Limónada Casera</h3>
+                            <span class="menu-item-price">€3.00</span>
+                        </div>
+                        <p class="menu-item-desc">Limones exprimidos, menta fresca y un toque de jengibre.</p>
+                        <button class="order-btn" data-item="Limónada Casera">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Smoothie Tropical</h3>
+                            <span class="menu-item-price">€4.00</span>
+                        </div>
+                        <p class="menu-item-desc">Mezcla de mango, piña, plátano y leche de coco.</p>
+                        <button class="order-btn" data-item="Smoothie Tropical">Pedir</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Dulce -->
+            <section class="menu-section" id="dulce">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-cookie-bite"></i>
+                    Dulce
+                </h2>
+                <p class="menu-section-desc">Postres y dulces caseros elaborados diariamente.</p>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tarta de Chocolate Belga</h3>
+                            <span class="menu-item-price">€4.50</span>
+                        </div>
+                        <p class="menu-item-desc">Textura sedosa con tres capas de chocolate diferente y base de galleta.</p>
+                        <button class="order-btn" data-item="Tarta de Chocolate Belga">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Croissant de Mantequilla</h3>
+                            <span class="menu-item-price">€2.20</span>
+                        </div>
+                        <p class="menu-item-desc">Hojaldre artesanal con mantequilla AOP francesa.</p>
+                        <button class="order-btn" data-item="Croissant de Mantequilla">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Cheesecake de Fresa</h3>
+                            <span class="menu-item-price">€4.80</span>
+                        </div>
+                        <p class="menu-item-desc">Base crujiente, crema de queso suave y coulis de fresa natural.</p>
+                        <button class="order-btn" data-item="Cheesecake de Fresa">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Magdalena de Vainilla</h3>
+                            <span class="menu-item-price">€1.80</span>
+                        </div>
+                        <p class="menu-item-desc">Esponjosa y aromática, con notas de vainilla de Madagascar.</p>
+                        <button class="order-btn" data-item="Magdalena de Vainilla">Pedir</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Salado -->
+            <section class="menu-section" id="salado">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-bread-slice"></i>
+                    Salado
+                </h2>
+                <p class="menu-section-desc">Para cuando el hambre aprieta, opciones saladas y deliciosas.</p>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Sandwich Club</h3>
+                            <span class="menu-item-price">€6.50</span>
+                        </div>
+                        <p class="menu-item-desc">Pollo a la plancha, bacon, lechuga, tomate y mayonesa casera en pan de masa madre.</p>
+                        <button class="order-btn" data-item="Sandwich Club">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Quiche Lorraine</h3>
+                            <span class="menu-item-price">€5.00</span>
+                        </div>
+                        <p class="menu-item-desc">Masa quebrada rellena de huevo, nata, bacon y queso gruyère.</p>
+                        <button class="order-btn" data-item="Quiche Lorraine">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Ensalada Mediterránea</h3>
+                            <span class="menu-item-price">€7.50</span>
+                        </div>
+                        <p class="menu-item-desc">Lechuga, tomate, pepino, aceitunas, queso feta y vinagreta de limón.</p>
+                        <button class="order-btn" data-item="Ensalada Mediterránea">Pedir</button>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tosta de Aguacate</h3>
+                            <span class="menu-item-price">€5.50</span>
+                        </div>
+                        <p class="menu-item-desc">Pan integral tostado con aguacate, tomate cherry, semillas y aceite de oliva virgen extra.</p>
+                        <button class="order-btn" data-item="Tosta de Aguacate">Pedir</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Especiales -->
+            <section class="menu-section" id="especiales">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-star"></i>
+                    Especiales de la Casa
+                </h2>
+                <p class="menu-section-desc">Nuestras creaciones exclusivas que no encontrarás en otro lugar.</p>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item featured">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Brunch Aroma</h3>
+                            <span class="menu-item-price">€12.50</span>
+                        </div>
+                        <p class="menu-item-desc">Huevos benedictinos, bacon crujiente, aguacate, tomate asado y tostadas. Incluye café o zumo natural.</p>
+                        <button class="order-btn" data-item="Brunch Aroma">Pedir</button>
+                        <span class="featured-badge">Recomendado</span>
+                    </div>
+                    
+                    <div class="menu-item featured">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Café Helado con Nube Dulce</h3>
+                            <span class="menu-item-price">€4.50</span>
+                        </div>
+                        <p class="menu-item-desc">Café frío con helado de vainilla, sirope de caramelo y nube de algodón de azúcar.</p>
+                        <button class="order-btn" data-item="Café Helado con Nube Dulce">Pedir</button>
+                        <span class="featured-badge">Novedad</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tabla de Degustación Dulce</h3>
+                            <span class="menu-item-price">€8.50</span>
+                        </div>
+                        <p class="menu-item-desc">Selección de nuestros cuatro postres más populares en formato mini. Perfecto para compartir.</p>
+                        <button class="order-btn" data-item="Tabla de Degustación Dulce">Pedir</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de pedido -->
+    <div class="order-modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Confirmar Pedido</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Has seleccionado: <strong id="selectedItem">Espresso Aroma</strong></p>
+                <div class="modal-form">
+                    <div class="form-group">
+                        <label for="quantity">Cantidad:</label>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" id="decreaseQty">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10">
+                            <button class="quantity-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notas adicionales:</label>
+                        <textarea id="notes" rows="2" placeholder="Ej: Sin azúcar, para llevar..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-total">
+                    Total: <span id="orderTotal">€2.50</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelOrder">Cancelar</button>
+                <button class="btn btn-primary" id="confirmOrder">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon">☕</span>
+                        <span class="logo-text">Cafetería <strong>Aroma</strong></span>
+                    </a>
+                    <p class="footer-text">Disfruta de nuestro menú completo en nuestro local o pide para llevar.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Horario de servicio</h3>
+                    <ul class="footer-links">
+                        <li>Lun-Vie: 7:00-10:00</li>
+                        <li>Sábados: 8:00-11:00</li>
+                        <li>Domingos: 9:00-9:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul class="footer-links">
+                        <li>Para llevar</li>
+                        <li>Reservas para grupos</li>
+                        <li>Entrega a domicilio</li>
+                        <li>Catering para eventos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Cafetería Aroma. Menú sujeto a disponibilidad.</p>
+                <p><a href="index.html">Volver a la página principal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

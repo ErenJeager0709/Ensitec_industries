@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar El Rincón | Carta de Cocteles</title>
+    <link rel="stylesheet" href="bar-rincon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo Animado -->
+    <div class="liquid-background">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Particles Container -->
+    <div id="particles-js"></div>
+
+    <!-- Header con Efecto Glassmorphism -->
+    <header class="bar-header">
+        <div class="header-glow"></div>
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Animado -->
+                <div class="logo-section">
+                    <div class="logo-orb">
+                        <div class="orb-inner">
+                            <i class="fas fa-cocktail"></i>
+                        </div>
+                        <div class="orb-glow"></div>
+                    </div>
+                    <div class="bar-info">
+                        <h1 class="bar-title">El Rincón</h1>
+                        <p class="tagline">Mixología & Experiencias</p>
+                        <div class="pulse-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Navegación Flotante -->
+                <nav class="floating-nav">
+                    <div class="nav-indicator"></div>
+                    <button class="nav-btn active" data-category="signature">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Firmas</span>
+                    </button>
+                    <button class="nav-btn" data-category="classic">
+                        <span class="nav-icon">🥃</span>
+                        <span class="nav-text">Clásicos</span>
+                    </button>
+                    <button class="nav-btn" data-category="tropical">
+                        <span class="nav-icon">🏝️</span>
+                        <span class="nav-text">Tropicales</span>
+                    </button>
+                    <button class="nav-btn" data-category="shots">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Shots</span>
+                    </button>
+                    <button class="nav-btn" data-category="beer">
+                        <span class="nav-icon">🍺</span>
+                        <span class="nav-text">Cervezas</span>
+                    </button>
+                </nav>
+
+                <!-- QR Flotante -->
+                <div class="qr-floating">
+                    <div class="qr-orb">
+                        <i class="fas fa-qrcode"></i>
+                        <div class="qr-rings">
+                            <div class="ring"></div>
+                            <div class="ring"></div>
+                            <div class="ring"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section con Efecto Parallax -->
+    <section class="hero-parallax">
+        <div class="parallax-layer" data-speed="0.1"></div>
+        <div class="parallax-layer" data-speed="0.3"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">Happy Hour</span>
+                    <div class="badge-glow"></div>
+                </div>
+                <h2 class="hero-title">18:00 - 20:00</h2>
+                <p class="hero-subtitle">2x1 en todos nuestros cocteles</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content con Efecto de Cristal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Cocktail Grid -->
+            <div class="cocktail-grid" id="cocktail-grid">
+                <!-- Los cocteles se cargan dinámicamente -->
+            </div>
+
+            <!-- Floating Action Button -->
+            <div class="floating-actions">
+                <button class="fab main-fab">
+                    <i class="fas fa-glass-cheers"></i>
+                </button>
+                <div class="fab-menu">
+                    <button class="fab-item" onclick="filterByPrice(100)">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Económicos</span>
+                    </button>
+                    <button class="fab-item" onclick="showRecommendations()">
+                        <i class="fas fa-star"></i>
+                        <span>Recomendados</span>
+                    </button>
+                    <button class="fab-item" onclick="toggleSound()">
+                        <i class="fas fa-music"></i>
+                        <span>Sonido</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Neon -->
+    <footer class="neon-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="neon-text">El Rincón</h3>
+                    <p>Mixología de autor en cada trago</p>
+                    <div class="social-neon">
+                        <a href="#" class="neon-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="neon-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/qr/C3MHHXVQDDJDJ1" class="neon-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lun - Vie: 17:00 - 02:00</p>
+                    <p>Sab - Dom: 16:00 - 03:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 El Marqués, Querétaro</p>
+                    <p>📞 +52 729 926 6745</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bar El Rincón. Experiencias que se disfrutan, momentos que se recuerdan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+    <audio id="order-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkle-sound-3090.mp3"></audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="bar-rincon.js"></script>
+</body>
+</html>

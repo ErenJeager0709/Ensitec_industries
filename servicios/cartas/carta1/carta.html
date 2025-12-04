@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Sofía & Alejandro - Nuestra Boda</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Cargador romántico -->
+    <div class="loader">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="loading-text">Sofía & Alejandro</div>
+    </div>
+
+    <!-- Invitación principal flotante -->
+    <div class="floating-invitation">
+        <div class="invitation-card">
+            <div class="invitation-content">
+                <h1 class="couple-names">Sofía & Alejandro</h1>
+                <p class="invitation-date">25 · 05 · 2024</p>
+                <p class="invitation-text">Nos casamos y queremos compartir este día especial contigo</p>
+                <button class="open-invitation-btn" id="openInvitationBtn">
+                    <i class="fas fa-heart"></i>
+                    Abrir nuestra historia
+                </button>
+            </div>
+            <div class="rose-petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación floral - CORREGIDA PARA MÓVILES -->
+    <nav class="wedding-nav" id="weddingNav">
+        <div class="nav-container">
+            <div class="nav-logo">S&A</div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#our-story" class="nav-link active" data-section="our-story" onclick="handleNavClick(event, 'our-story')">
+                    <i class="fas fa-book-open"></i>
+                    <span>Nuestra Historia</span>
+                </a>
+                <a href="#ceremony" class="nav-link" data-section="ceremony" onclick="handleNavClick(event, 'ceremony')">
+                    <i class="fas fa-church"></i>
+                    <span>Ceremonia</span>
+                </a>
+                <a href="#reception" class="nav-link" data-section="reception" onclick="handleNavClick(event, 'reception')">
+                    <i class="fas fa-glass-cheers"></i>
+                    <span>Recepción</span>
+                </a>
+                <a href="#gallery" class="nav-link" data-section="gallery" onclick="handleNavClick(event, 'gallery')">
+                    <i class="fas fa-images"></i>
+                    <span>Galería</span>
+                </a>
+                <a href="#rsvp" class="nav-link" data-section="rsvp" onclick="handleNavClick(event, 'rsvp')">
+                    <i class="fas fa-envelope"></i>
+                    <span>Confirmar</span>
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sección principal - Nuestra Historia -->
+    <main class="wedding-main">
+        <!-- Hero Section -->
+        <section id="our-story" class="section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="names-animation">
+                        <span class="name name-sofia">Sofía</span>
+                        <div class="heart-connector">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <span class="name name-alejandro">Alejandro</span>
+                    </div>
+                    <h2 class="hero-subtitle">Uniremos nuestras vidas</h2>
+                    <p class="hero-date">25 de Mayo 2024</p>
+                    <div class="countdown-container">
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="days">00</span>
+                                <span class="countdown-label">Días</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="hours">00</span>
+                                <span class="countdown-label">Horas</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="minutes">00</span>
+                                <span class="countdown-label">Minutos</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="seconds">00</span>
+                                <span class="countdown-label">Segundos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-floral"></div>
+            </div>
+
+            <!-- Timeline de nuestra historia -->
+            <div class="story-timeline">
+                <h3 class="section-title">Nuestra Historia de Amor</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-content">
+                            <h4>Primer Encuentro</h4>
+                            <p>Nos conocimos en una exposición de arte. Alejandro estaba admirando un cuadro que Sofía había pintado.</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h4>Primer Viaje Juntos</h4>
+                            <p>Viajamos a París en invierno. Caminamos por Montmartre bajo la lluvia.</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h4>La Propuesta</h4>
+                            <p>En el mismo lugar donde nos conocimos, Alejandro se arrodilló frente al cuadro que los unió.</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h4>Nuestro Gran Día</h4>
+                            <p>Finalmente llegó el día en que nuestras almas se unen para siempre.</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frase romántica -->
+            <div class="love-quote">
+                <div class="quote-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>El amor no se mira, se siente. Y aún más, se siente con el alma.</p>
+                    <span class="quote-author">— Alejandro para Sofía</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Ceremonia -->
+        <section id="ceremony" class="section">
+            <div class="ceremony-section">
+                <h3 class="section-title">La Ceremonia</h3>
+                <div class="ceremony-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h4>Iglesia de Santa María</h4>
+                        <p class="detail-address">Calle del Amor, 123<br>Ciudad del Romance</p>
+                        <p class="detail-time">16:00 horas</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Misa de Enlace</h4>
+                        <p>Ceremonia religiosa<br>Con misa cantada</p>
+                        <p class="detail-note">Vestimenta formal</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h4>Música en Vivo</h4>
+                        <p>Coro de cámara<br>Violín y piano</p>
+                        <p class="detail-note">Interpretaciones especiales</p>
+                    </div>
+                </div>
+                <div class="ceremony-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Ubicación de la ceremonia</p>
+                        <button class="map-btn" onclick="openMap()">Ver en mapa</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Recepción -->
+        <section id="reception" class="section">
+            <div class="reception-section">
+                <h3 class="section-title">Celebración y Banquete</h3>
+                <div class="reception-details">
+                    <div class="venue-card">
+                        <div class="venue-image">
+                            <div class="venue-overlay">
+                                <h4>Hacienda Las Rosas</h4>
+                                <p>Jardines del Edén</p>
+                            </div>
+                        </div>
+                        <div class="venue-info">
+                            <p><i class="fas fa-clock"></i> 19:00 en adelante</p>
+                            <p><i class="fas fa-utensils"></i> Banquete gourmet</p>
+                            <p><i class="fas fa-wine-glass-alt"></i> Bar abierto</p>
+                            <p><i class="fas fa-music"></i> DJ y banda en vivo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-preview">
+                        <h4>Degustación de Amor</h4>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <h5>Entradas</h5>
+                                <p>Tartar de salmón con aguacate</p>
+                                <p>Carpaccio de res con parmesano</p>
+                            </div>
+                            <div class="menu-item">
+                                <h5>Plato Principal</h5>
+                                <p>Lomo de res en salsa de vino tinto</p>
+                                <p>Risotto de champiñones silvestres</p>
+                            </div>
+                            <div class="menu-item">
+                                <h5>Postre</h5>
+                                <p>Tarta de novios personalizada</p>
+                                <p>Selección de macarons franceses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Galería -->
+        <section id="gallery" class="section">
+            <div class="gallery-section">
+                <h3 class="section-title">Nuestros Momentos</h3>
+                <div class="gallery-container">
+                    <div class="gallery-item" onclick="openGallery(0)">
+                        <div class="gallery-overlay">
+                            <p>Nuestro primer viaje</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openGallery(1)">
+                        <div class="gallery-overlay">
+                            <p>La propuesta</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openGallery(2)">
+                        <div class="gallery-overlay">
+                            <p>Sesión de fotos</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openGallery(3)">
+                        <div class="gallery-overlay">
+                            <p>Preparativos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-modal" id="galleryModal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeGallery()">&times;</span>
+                        <img id="modalImage" src="" alt="Galería de la boda">
+                        <div class="modal-caption" id="modalCaption"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección RSVP -->
+        <section id="rsvp" class="section">
+            <div class="rsvp-section">
+                <h3 class="section-title">Confirma tu Asistencia</h3>
+                <div class="rsvp-form">
+                    <form id="wedding-rsvp" onsubmit="submitRSVP(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Tu nombre completo" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>¿Asistirás?</option>
+                                <option value="yes">¡Con todo mi corazón!</option>
+                                <option value="no">Lamentablemente no podré asistir</option>
+                            </select>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="Número de acompañantes" min="0" max="5">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea placeholder="Mensaje para los novios..."></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Confirmación
+                        </button>
+                    </form>
+                    <div class="rsvp-success" id="rsvpSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>¡Confirmación enviada!</h4>
+                        <p>Gracias por ser parte de nuestro día especial.</p>
+                    </div>
+                </div>
+                
+                <div class="gift-section">
+                    <h4>Mesa de Regalos</h4>
+                    <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio:</p>
+                    <div class="gift-options">
+                        <div class="gift-option" onclick="selectGift('honeymoon')">
+                            <i class="fas fa-home"></i>
+                            <span>Honeymoon Fund</span>
+                        </div>
+                        <div class="gift-option" onclick="selectGift('store')">
+                            <i class="fas fa-store"></i>
+                            <span>Tienda Departamental</span>
+                        </div>
+                        <div class="gift-option" onclick="selectGift('surprise')">
+                            <i class="fas fa-gift"></i>
+                            <span>Sorpresa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer romántico -->
+    <footer class="wedding-footer">
+        <div class="footer-content">
+            <div class="footer-names">
+                <span>Sofía</span>
+                <i class="fas fa-heart"></i>
+                <span>Alejandro</span>
+            </div>
+            <p class="footer-date">25 de Mayo, 2024</p>
+            <p class="footer-quote">"Porque en cada latido, encuentro tu nombre"</p>
+            <div class="footer-social">
+                <a href="#" class="social-link">
+                    <i class="fas fa-hashtag"></i>
+                    #SofiaYAlejandro2024
+                </a>
+            </div>
+            <div class="footer-music">
+                <button class="music-toggle" id="musicToggle">
+                    <i class="fas fa-music"></i>
+                    <span>Nuestra canción</span>
+                </button>
+                <audio id="wedding-song" loop>
+                    <!-- Audio placeholder - puedes agregar tu propia música -->
+                    <source src="#" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Con amor, Sofía y Alejandro</p>
+        </div>
+    </footer>
+
+    <!-- Botón para subir -->
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Efectos de pétalos -->
+    <div class="petals-container" id="petalsContainer"></div>
+
+    <script src="carta.js"></script>
+</body>
+</html>

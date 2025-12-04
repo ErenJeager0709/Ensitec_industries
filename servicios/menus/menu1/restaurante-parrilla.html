@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="en.png">
+
+<!-- Para diferentes tamaños (opcional pero recomendado) -->
+<link rel="icon" type="image/png" sizes="32x32" href="en.png-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="en.png-16x16.png">
+
+<!-- Para dispositivos Apple -->
+<link rel="apple-touch-icon" href="en.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>La Parrilla - Menú Digital</title>
+    <link rel="stylesheet" href="restaurante-parrilla.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header del Restaurante -->
+    <header class="restaurant-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="restaurant-info">
+                        <h1>La Parrilla</h1>
+                        <p class="tagline">Carnes Premium & Parrilla Argentina</p>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <p>Menú Digital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación de Categorías -->
+    <nav class="menu-categories">
+        <div class="container">
+            <div class="category-nav">
+                <button class="category-btn active" data-category="cortes">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span class="btn-text">Cortes</span>
+                </button>
+                <button class="category-btn" data-category="hamburguesas">
+                    <i class="fas fa-hamburger"></i>
+                    <span class="btn-text">Hamburguesas</span>
+                </button>
+                <button class="category-btn" data-category="guarniciones">
+                    <i class="fas fa-utensils"></i>
+                    <span class="btn-text">Guarniciones</span>
+                </button>
+                <button class="category-btn" data-category="bebidas">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <span class="btn-text">Bebidas</span>
+                </button>
+                <button class="category-btn" data-category="postres">
+                    <i class="fas fa-ice-cream"></i>
+                    <span class="btn-text">Postres</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Especialidades -->
+    <section class="specialties">
+        <div class="container">
+            <div class="specialty-banner">
+                <h2>🥩 Especialidades de la Casa</h2>
+                <p>Cortes seleccionados, madurados y preparados a la perfección</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Items -->
+    <main class="menu-main">
+        <div class="container">
+            <div class="menu-items" id="menu-items">
+                <!-- Los items se cargan dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Promociones -->
+    <section class="promotions">
+        <div class="container">
+            <h2 class="section-title">💫 Promociones Especiales</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-badge">Popular</div>
+                    <h3>Parrillada Completa</h3>
+                    <p>Incluye: Chorizo, Morcilla, Vacío, Asado + 2 Guarniciones</p>
+                    <div class="promo-price">
+                        <span class="old-price">$1,800</span>
+                        <span class="new-price">$1,500</span>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-badge">Nuevo</div>
+                    <h3>Combo Familiar</h3>
+                    <p>4 Hamburguesas + Papas + 4 Bebidas</p>
+                    <div class="promo-price">
+                        <span class="old-price">$600</span>
+                        <span class="new-price">$450</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="restaurant-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>La Parrilla</h3>
+                    <p>📍 El Marqués, Querétaro</p>
+                    <p>📞 +52 729 926 6745</p>
+                    <p>🕒 Lun-Dom: 12:00 - 23:00</p>
+                </div>
+                <div class="footer-social">
+                    <p>Síguenos en:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61571480017328"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/qr/C3MHHXVQDDJDJ1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2023 La Parrilla. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="restaurante-parrilla.js"></script>
+</body>
+</html>

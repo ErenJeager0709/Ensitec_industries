@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>¡30 Años! - Fiesta de Cumpleaños</title>
+    <meta name="description" content="Invitación para la fiesta de cumpleaños 30 años">
+    <meta name="theme-color" content="#6A11CB">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3126/3126680.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">🎂 Preparando la fiesta...</div>
+        </div>
+    </div>
+
+    <!-- Header/Nav -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <span class="nav-logo">30</span>
+                    <span class="nav-title">¡Fiesta!</span>
+                </div>
+                
+                <!-- Menú Desktop -->
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active" onclick="handleNavClick(event, 'home')">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="#details" class="nav-link" onclick="handleNavClick(event, 'details')">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Detalles</span>
+                    </a>
+                    <a href="#countdown" class="nav-link" onclick="handleNavClick(event, 'countdown')">
+                        <i class="fas fa-clock"></i>
+                        <span>Cuenta Regresiva</span>
+                    </a>
+                    <a href="#gallery" class="nav-link" onclick="handleNavClick(event, 'gallery')">
+                        <i class="fas fa-images"></i>
+                        <span>Galería</span>
+                    </a>
+                    <a href="#rsvp" class="nav-link" onclick="handleNavClick(event, 'rsvp')">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Confirmar</span>
+                    </a>
+                </div>
+                
+                <!-- Botón Hamburguesa Móvil -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="main">
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">¡30 AÑOS!</div>
+                    <h1 class="hero-title">
+                        <span class="hero-name">ALEJANDRO</span>
+                        <span class="hero-celebrates">CELEBRA</span>
+                    </h1>
+                    <p class="hero-subtitle">Una nueva década comienza</p>
+                    
+                    <div class="hero-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>SÁBADO 15 DE JUNIO</span>
+                    </div>
+                    
+                    <div class="hero-time">
+                        <i class="fas fa-clock"></i>
+                        <span>20:00 HORAS</span>
+                    </div>
+                    
+                    <div class="hero-cta">
+                        <button class="btn-primary" onclick="scrollToSection('details')">
+                            <i class="fas fa-champagne-glasses"></i>
+                            Ver detalles de la fiesta
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToSection('countdown')">
+                            <i class="fas fa-hourglass-half"></i>
+                            Ver cuenta regresiva
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-decoration">
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                </div>
+            </div>
+            
+            <!-- Sección de mensaje especial -->
+            <div class="message-section">
+                <div class="message-card">
+                    <div class="message-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="message-text">
+                        "Los 30 no son el final de la juventud, son el comienzo de una nueva aventura. 
+                        ¡Ven a celebrar conmigo este nuevo capítulo!"
+                    </p>
+                    <div class="message-signature">
+                        — Alejandro
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Detalles -->
+        <section id="details" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Detalles del Evento
+                </h2>
+                
+                <div class="details-grid">
+                    <!-- Lugar -->
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <h3 class="detail-title">Lugar</h3>
+                        <p class="detail-text">La Terraza Rooftop Bar</p>
+                        <p class="detail-subtext">Av. Principal 1234, Zona VIP</p>
+                        <button class="detail-btn" onclick="openMap()">
+                            <i class="fas fa-map"></i>
+                            Ver en mapa
+                        </button>
+                    </div>
+                    
+                    <!-- Fecha y Hora -->
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-star"></i>
+                        </div>
+                        <h3 class="detail-title">Fecha & Hora</h3>
+                        <p class="detail-text">Sábado 15 de Junio</p>
+                        <p class="detail-subtext">20:00 - 02:00 horas</p>
+                        <div class="detail-note">
+                            <i class="fas fa-music"></i>
+                            DJ en vivo toda la noche
+                        </div>
+                    </div>
+                    
+                    <!-- Dress Code -->
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-shirt"></i>
+                        </div>
+                        <h3 class="detail-title">Dress Code</h3>
+                        <p class="detail-text">Elegante Casual</p>
+                        <p class="detail-subtext">¡Sácate tus mejores outfits!</p>
+                        <div class="detail-tags">
+                            <span class="tag">Elegante</span>
+                            <span class="tag">Moderno</span>
+                            <span class="tag">Cómodo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Regalos -->
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="detail-title">Regalos</h3>
+                        <p class="detail-text">Tu presencia es el mejor regalo</p>
+                        <p class="detail-subtext">Si quieres sorprenderme:</p>
+                        <div class="gift-options">
+                            <button class="gift-option" onclick="showGiftInfo('wishlist')">
+                                <i class="fas fa-list"></i>
+                                Wishlist
+                            </button>
+                            <button class="gift-option" onclick="showGiftInfo('surprise')">
+                                <i class="fas fa-surprise"></i>
+                                Sorpresa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mapa placeholder -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>Ubicación del Evento</h4>
+                        <p>La Terraza Rooftop Bar - Vista panorámica de la ciudad</p>
+                        <button class="btn-map" onclick="openMap()">
+                            <i class="fas fa-directions"></i>
+                            Cómo llegar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Cuenta Regresiva -->
+        <section id="countdown" class="section">
+            <div class="countdown-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <i class="fas fa-hourglass-end"></i>
+                        Cuenta Regresiva
+                    </h2>
+                    
+                    <div class="countdown-container">
+                        <div class="countdown-display">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="countdownDays">00</div>
+                                <div class="countdown-label">DÍAS</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="countdownHours">00</div>
+                                <div class="countdown-label">HORAS</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="countdownMinutes">00</div>
+                                <div class="countdown-label">MINUTOS</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="countdownSeconds">00</div>
+                                <div class="countdown-label">SEGUNDOS</div>
+                            </div>
+                        </div>
+                        
+                        <div class="countdown-message">
+                            <p>¡La fiesta está por comenzar! ¿Listos para celebrar?</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Progreso del tiempo -->
+                    <div class="time-progress">
+                        <div class="progress-label">
+                            <span>Tiempo restante para la fiesta:</span>
+                            <span id="progressPercentage">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Galería -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-camera"></i>
+                    Recuerdos y Momentos
+                </h2>
+                
+                <div class="gallery-container">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openLightbox(0)">
+                            <div class="gallery-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-expand"></i>
+                                    <p>20s - Diversión Universitaria</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openLightbox(1)">
+                            <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-expand"></i>
+                                    <p>25 - Primer trabajo</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openLightbox(2)">
+                            <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-expand"></i>
+                                    <p>Viajes y Aventuras</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openLightbox(3)">
+                            <div class="gallery-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-expand"></i>
+                                    <p>Amigos y Familia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lightbox -->
+                <div class="lightbox" id="lightbox">
+                    <div class="lightbox-content">
+                        <button class="lightbox-close" onclick="closeLightbox()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="lightbox-image" id="lightboxImage"></div>
+                        <div class="lightbox-caption" id="lightboxCaption"></div>
+                        <div class="lightbox-nav">
+                            <button class="lightbox-prev" onclick="changeImage(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="lightbox-next" onclick="changeImage(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección RSVP -->
+        <section id="rsvp" class="section">
+            <div class="rsvp-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <i class="fas fa-envelope-open-text"></i>
+                        Confirma tu Asistencia
+                    </h2>
+                    
+                    <div class="rsvp-container">
+                        <div class="rsvp-form-card">
+                            <h3 class="rsvp-title">¿Vienes a la fiesta?</h3>
+                            
+                            <form id="rsvpForm" onsubmit="submitRSVP(event)">
+                                <div class="form-group">
+                                    <input type="text" id="guestName" placeholder="Tu nombre completo" required>
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" id="guestEmail" placeholder="Correo electrónico" required>
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select id="guestAttendance" required>
+                                        <option value="" disabled selected>¿Asistirás?</option>
+                                        <option value="yes">¡Claro que sí! 🎉</option>
+                                        <option value="maybe">Tal vez 🤔</option>
+                                        <option value="no">No podré asistir 😔</option>
+                                    </select>
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="number" id="guestCount" placeholder="¿Cuántos vienen? (incluyéndote)" min="1" max="10">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <textarea id="guestMessage" placeholder="Mensaje o sugerencia para la fiesta..."></textarea>
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-submit" id="submitButton">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Enviar Confirmación
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <!-- Mensaje de éxito -->
+                            <div class="success-message" id="successMessage">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3>¡Confirmación enviada!</h3>
+                                <p>Gracias por confirmar. Te esperamos en la fiesta 🎂</p>
+                                <button class="btn-share" onclick="shareEvent()">
+                                    <i class="fas fa-share-alt"></i>
+                                    Compartir evento
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Estadísticas -->
+                        <div class="rsvp-stats">
+                            <h3 class="stats-title">¡La fiesta se llena!</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number" id="confirmedCount">0</div>
+                                    <div class="stat-label">Confirmados</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" id="maybeCount">0</div>
+                                    <div class="stat-label">Tal vez</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" id="totalCount">0</div>
+                                    <div class="stat-label">Invitados totales</div>
+                                </div>
+                            </div>
+                            
+                            <div class="guests-preview">
+                                <h4>Algunos que ya confirmaron:</h4>
+                                <div class="guests-list" id="guestsList">
+                                    <!-- Se llena dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">30</div>
+                    <div class="footer-info">
+                        <h3>¡30 Años de Alegría!</h3>
+                        <p>Celebrando una nueva década de vida</p>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <p>Sigue la fiesta en:</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-hashtag">
+                    <p>
+                        <i class="fas fa-hashtag"></i>
+                        #30ConAlejandro
+                    </p>
+                    <p>¡Usa el hashtag en tus fotos!</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Fiesta de 30 Años. ¡Gracias por ser parte de esta celebración!</p>
+                <p class="footer-note">
+                    <i class="fas fa-heart"></i>
+                    Hecho con amor para mis amigos y familia
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante para subir -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

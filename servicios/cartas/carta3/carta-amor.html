@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor | Para Mi Amor</title>
+    <link rel="stylesheet" href="carta-amor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo con partículas -->
+    <div id="particles-js"></div>
+    
+    <!-- Corazones flotantes -->
+    <div class="floating-hearts">
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="love-container">
+        <!-- Encabezado romántico -->
+        <header class="love-header">
+            <div class="rose">🌹</div>
+            <h1 class="love-title">Para Mi Amor</h1>
+            <div class="rose">🌹</div>
+        </header>
+
+        <!-- Sección de la carta -->
+        <section class="love-letter">
+            <div class="letter-container">
+                <div class="letter-paper">
+                    <div class="letter-content">
+                        <div class="letter-date">
+                            <span id="current-date"></span>
+                        </div>
+                        
+                        <h2 class="greeting">Mi Querida <span class="lover-name" contenteditable="true">[Nombre]</span>,</h2>
+                        
+                        <div class="letter-body">
+                            <p class="paragraph">
+                                Desde que llegaste a mi vida, todo cobró un nuevo significado. Tu risa es la melodía que alegra mis días, tu mirada el faro que guía mis noches, y tu amor el motor que impulsa mi corazón.
+                            </p>
+                            
+                            <p class="paragraph">
+                                Recuerdo cada momento a tu lado como si fuera un tesoro preciado. Esa primera vez que te vi, nuestra primera conversación, nuestra primera cita... cada instante contigo se ha grabado en mi alma para siempre.
+                            </p>
+                            
+                            <p class="paragraph">
+                                Eres la razón por la que creo en el destino, en la magia del amor verdadero. Contigo he descubierto que el amor no se mide en grandiosos gestos, sino en pequeños detalles, en miradas cómplices, en manos que se buscan y en silencios que dicen más que mil palabras.
+                            </p>
+
+                            <div class="love-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <span>El mejor amor es aquel que despierta el alma y nos hace aspirar a más, que enciende nuestro corazón y pacifica nuestra mente.</span>
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            
+                            <p class="paragraph">
+                                Prometo amarte en cada amanecer, cuidarte en cada atardecer y abrazarte en cada noche. Prometo ser tu refugio, tu confidente, tu mejor amigo y tu amor eterno.
+                            </p>
+                            
+                            <p class="closing">
+                                Con todo mi amor,<br>
+                                <span class="signature" contenteditable="true">[Tu Nombre]</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de recuerdos -->
+        <section class="memories-gallery">
+            <h3 class="section-title">Nuestros Recuerdos</h3>
+            <div class="gallery-grid">
+                <div class="memory-item">
+                    <div class="memory-image" style="background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60')">
+                        <div class="memory-overlay">
+                            <span>Nuestro Primer Día</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60')">
+                        <div class="memory-overlay">
+                            <span>Aventuras Juntos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvdmUlMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60')">
+                        <div class="memory-overlay">
+                            <span>Momentos Especiales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contador de amor -->
+        <section class="love-counter">
+            <h3 class="section-title">Tiempo Juntos</h3>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" id="days-together">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="hours-together">0</div>
+                    <div class="counter-label">Horas</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="minutes-together">0</div>
+                    <div class="counter-label">Minutos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="seconds-together">0</div>
+                    <div class="counter-label">Segundos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Música romántica -->
+        <section class="music-player">
+            <h3 class="section-title">Nuestra Canción</h3>
+            <div class="player-container">
+                <audio id="love-song" controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                <div class="player-controls">
+                    <button id="play-btn" class="control-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="pause-btn" class="control-btn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensaje secreto -->
+        <section class="secret-message">
+            <button id="secret-btn" class="secret-btn">
+                <i class="fas fa-heart"></i>
+                Mensaje Secreto
+            </button>
+            <div id="secret-text" class="secret-text">
+                <p>Eres lo mejor que me ha pasado en la vida. Te amo más de lo que las palabras pueden expresar. 💖</p>
+            </div>
+        </section>
+
+        <!-- Footer romántico -->
+        <footer class="love-footer">
+            <div class="footer-hearts">
+                <span>❤</span>
+                <span>💕</span>
+                <span>💖</span>
+                <span>💝</span>
+                <span>💘</span>
+            </div>
+            <p class="footer-text">Hecho con 💖 para el amor de mi vida</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="carta-amor.js"></script>
+</body>
+</html>

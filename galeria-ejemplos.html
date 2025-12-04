@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Favicon principal -->
+    <link rel="icon" type="image/png" href="en.png">
+    
+    <!-- Para diferentes tamaños (opcional pero recomendado) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="en.png-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="en.png-16x16.png">
+    
+    <!-- Para dispositivos Apple -->
+    <link rel="apple-touch-icon" href="en.png">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Galería de Ejemplos | Ensitec QR</title>
+    <link rel="stylesheet" href="galeria-ejemplos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="gallery-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="back-text">Volver</span>
+                </a>
+                <div class="logo">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Ensitec QR</span>
+                </div>
+            </div>
+            <div class="page-info">
+                <h1>Galería de Ejemplos</h1>
+                <p>Explora nuestros trabajos - Toca cualquier ejemplo para verlo en pantalla completa</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtros -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="menu">Menús QR</button>
+                <button class="filter-btn" data-filter="carta">Cartas</button>
+                <button class="filter-btn" data-filter="web">Páginas Web</button>
+                <!-- <button class="filter-btn" data-filter="au">Automatización</button> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Los ejemplos se cargan con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para vista completa -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Título del Ejemplo</h2>
+                <span id="modal-category" class="category-tag">Categoría</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="modal-iframe" src="" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button id="fullscreen-btn" class="btn">
+                    <i class="fas fa-expand"></i> Pantalla Completa
+                </button>
+                <a id="external-link" href="#" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i> Abrir en Nueva Pestaña
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="galeria-ejemplos.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Restaurante "La Buena Mesa"</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="menu.js">
+    
+</head>
+<body>
+    <!-- ESTRUCTURA HTML -->
+    <header>
+        <h1 class="restaurant-name">La Buena Mesa</h1>
+        <p class="tagline">Sabores que enamoran desde 1985</p>
+    </header>
+    
+    <div class="container">
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="entradas">Entradas</button>
+            <button class="category-btn" data-category="principales">Platos Principales</button>
+            <button class="category-btn" data-category="postres">Postres</button>
+            <button class="category-btn" data-category="bebidas">Bebidas</button>
+        </div>
+        
+        <!-- SECCIÓN DE ENTRADAS -->
+        <section id="entradas" class="menu-section active">
+            <h2 class="section-title">Entradas</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Tabule');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Tabule Mediterráneo</h3>
+                        <p class="item-description">Ensalada refrescante de perejil, menta, tomate y trigo burgul, aderezada con limón y aceite de oliva.</p>
+                        <p class="item-price">$8.50</p>
+                        <div class="dietary-tags">
+                            <span class="tag vegetariano">Vegetariano</span>
+                            <span class="tag vegano">Vegano</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Empanadas');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Empanadas de Carne</h3>
+                        <p class="item-description">Tres empanadas horneadas rellenas de carne molida sazonada, pasas de uva y aceitunas.</p>
+                        <p class="item-price">$9.00</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Bruschetta');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Bruschetta Clásica</h3>
+                        <p class="item-description">Pan rústico tostado con tomate fresco, albahaca, ajo y aceite de oliva virgen extra.</p>
+                        <p class="item-price">$7.50</p>
+                        <div class="dietary-tags">
+                            <span class="tag vegetariano">Vegetariano</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE PLATOS PRINCIPALES -->
+        <section id="principales" class="menu-section">
+            <h2 class="section-title">Platos Principales</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Risotto');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Risotto de Hongos</h3>
+                        <p class="item-description">Arroz arbóreo cremoso con una mezcla de hongos silvestres, parmesano y trufa.</p>
+                        <p class="item-price">$16.00</p>
+                        <div class="dietary-tags">
+                            <span class="tag vegetariano">Vegetariano</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Salmón');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Salmón a la Parrilla</h3>
+                        <p class="item-description">Salmón salvaje con costra de hierbas, puré de batata y espárragos salteados.</p>
+                        <p class="item-price">$22.50</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Lasaña');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Lasaña de la Casa</h3>
+                        <p class="item-description">Capas de pasta casera, carne de res, cerdo, bechamel y queso gratinado.</p>
+                        <p class="item-price">$18.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE POSTRES -->
+        <section id="postres" class="menu-section">
+            <h2 class="section-title">Postres</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Tiramisú');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Tiramisú Clásico</h3>
+                        <p class="item-description">Postre italiano de capas de bizcocho de soletilla empapado en café y crema de mascarpone.</p>
+                        <p class="item-price">$8.00</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Volcán');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Volcán de Chocolate</h3>
+                        <p class="item-description">Pastel de chocolate con centro líquido, acompañado de helado de vainilla.</p>
+                        <p class="item-price">$9.50</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE BEBIDAS -->
+        <section id="bebidas" class="menu-section">
+            <h2 class="section-title">Bebidas</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('data:image/jpeg;base64,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');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Limonada de Lavanda</h3>
+                        <p class="item-description">Refrescante limonada casera con un toque de lavanda y menta fresca.</p>
+                        <p class="item-price">$5.00</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image" style="background-image: url('https://placeholder.com/300x200?text=Vino');"></div>
+                    <div class="item-details">
+                        <h3 class="item-title">Vino Tinto de la Casa</h3>
+                        <p class="item-description">Copa de nuestro vino tinto seleccionado, perfecto para acompañar carnes.</p>
+                        <p class="item-price">$7.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2023 La Buena Mesa - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- CÓDIGO JAVASCRIPT -->
+    
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Café Central - Menú Digital</title>
+    <link rel="stylesheet" href="cafe-central.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header del Café -->
+    <header class="cafe-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="cafe-info">
+                        <h1>Café Central</h1>
+                        <p class="tagline">Especialidades de Café & Repostería Artesanal</p>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <p>Menú Digital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación de Categorías -->
+    <nav class="menu-categories">
+        <div class="container">
+            <div class="category-nav">
+                <button class="category-btn active" data-category="cafes">
+                    <i class="fas fa-mug-hot"></i>
+                    Cafés Especiales
+                </button>
+                <button class="category-btn" data-category="te">
+                    <i class="fas fa-leaf"></i>
+                    Tés e Infusiones
+                </button>
+                <button class="category-btn" data-category="reposteria">
+                    <i class="fas fa-cookie-bite"></i>
+                    Repostería
+                </button>
+                <button class="category-btn" data-category="sandwiches">
+                    <i class="fas fa-bread-slice"></i>
+                    Sandwiches
+                </button>
+                <button class="category-btn" data-category="batidos">
+                    <i class="fas fa-blender"></i>
+                    Batidos & Smoothies
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner de Especialidades -->
+    <section class="specialties">
+        <div class="container">
+            <div class="specialty-banner">
+                <h2>☕ Granos Premium & Preparación Artesanal</h2>
+                <p>Descubre nuestra selección de cafés de origen único y métodos de preparación especializados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Items -->
+    <main class="menu-main">
+        <div class="container">
+            <div class="menu-items" id="menu-items">
+                <!-- Los items se cargan dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Combos y Promociones -->
+    <section class="promotions">
+        <div class="container">
+            <h2 class="section-title">🎁 Combos Especiales</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-badge">Más Popular</div>
+                    <h3>Combo Desayuno</h3>
+                    <p>Café + Croissant + Jugo Natural</p>
+                    <div class="promo-price">
+                        <span class="old-price">$120</span>
+                        <span class="new-price">$95</span>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-badge">Nuevo</div>
+                    <h3>Combo Merienda</h3>
+                    <p>Café Especial + Porción de Tarta</p>
+                    <div class="promo-price">
+                        <span class="old-price">$150</span>
+                        <span class="new-price">$120</span>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-badge">Recomendado</div>
+                    <h3>Combo Tarde de Té</h3>
+                    <p>Té Premium + 3 Pastelitos</p>
+                    <div class="promo-price">
+                        <span class="old-price">$180</span>
+                        <span class="new-price">$150</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cafe-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Café Central</h3>
+                    <p>📍 El Marqués, Querétaro</p>
+                    <p>📞 +52 729 926 6745</p>
+                    <p>🕒 Lun-Dom: 7:00 - 22:00</p>
+                    <p>📶 WiFi Gratuito</p>
+                </div>
+                <div class="footer-social">
+                    <p>Síguenos en:</p>
+                    <div class="social-links">
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61571480017328"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/qr/C3MHHXVQDDJDJ1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2023 Café Central. Tu lugar especial para el mejor café.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cafe-central.js"></script>
+</body>
+</html>
