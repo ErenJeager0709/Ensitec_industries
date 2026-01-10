@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Marisquería | Delicias del Mar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-fish"></i>
+                LA MARISQUERÍA
+            </div>
+            <div class="tagline">FRESCURA DEL MAR EN CADA BOCADO</div>
+            <p class="description">Disfruta de los más exquisitos mariscos frescos, preparados al momento por nuestros chefs especializados. Calidad y sabor que te transportan a la orilla del mar.</p>
+            
+            <!-- Botón para mostrar filtros en móvil -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-filter"></i> Filtrar Categorías
+            </button>
+            
+            <!-- Filtros -->
+            <div class="filters-container" id="filtersContainer">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ceviche">Ceviches</button>
+                    <button class="filter-btn" data-filter="camarones">Camarones</button>
+                    <button class="filter-btn" data-filter="pescado">Pescado</button>
+                    <button class="filter-btn" data-filter="ostiones">Ostiones</button>
+                    <button class="filter-btn" data-filter="especialidades">Especialidades</button>
+                    <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Principal -->
+    <main class="container">
+        <!-- Ceviches -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-utensil-spoon"></i>
+                Ceviches Frescos
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Ceviche Mixto -->
+                <div class="menu-item" data-category="ceviche">
+                    <div class="item-images">
+                        <img src="https://buenazo.cronosmedia.glr.pe/original/2020/09/09/5f58f8c082c2f615f804ffdb.jpg" alt="Ceviche Mixto">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 4 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Ceviche Mixto Clásico</h3>
+                            <span class="item-price">$189</span>
+                        </div>
+                        <p class="item-desc">Mezcla de camarón, pulpo, calamar y pescado fresco marinados en jugo de limón con cebolla morada, cilantro y ají limo. Acompañado de camote y choclo.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Más Vendido</span>
+                                <span class="tag seafood">Mariscos</span>
+                            </div>
+                            <button class="view-images-btn" data-item="ceviche-mix">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ceviche de Mero -->
+                <div class="menu-item" data-category="ceviche pescado">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ceviche de Mero">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Ceviche de Mero</h3>
+                            <span class="item-price">$169</span>
+                        </div>
+                        <p class="item-desc">Filete de mero fresco cortado en cubos, marinado en limón con cebolla roja, cilantro, ají amarillo y un toque de ajo. Tradición peruana en su máxima expresión.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag new">Nuevo</span>
+                                <span class="tag seafood">Pescado</span>
+                            </div>
+                            <button class="view-images-btn" data-item="ceviche-mero">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ceviche de Camarón -->
+                <div class="menu-item" data-category="ceviche camarones">
+                    <div class="item-images">
+                        <img src="https://www.laylita.com/recetas/wp-content/uploads/1-Ceviche-de-camaron-ecuatoriano.jpg" alt="Ceviche de Camarón">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Ceviche de Camarón</h3>
+                            <span class="item-price">$159</span>
+                        </div>
+                        <p class="item-desc">Camarones medianos cocidos en limón con cebolla morada, tomate, cilantro y rocoto. Perfecto equilibrio entre acidez y picor.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag spicy">Picante</span>
+                                <span class="tag seafood">Camarón</span>
+                            </div>
+                            <button class="view-images-btn" data-item="ceviche-camaron">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Camarones -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-shrimp"></i>
+                Platillos con Camarón
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Camarones al Ajillo -->
+                <div class="menu-item" data-category="camarones">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camarones al Ajillo">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 4 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Camarones al Ajillo</h3>
+                            <span class="item-price">$229</span>
+                        </div>
+                        <p class="item-desc">Grandes camarones salteados en aceite de oliva con abundante ajo, perejil y un toque de vino blanco. Acompañados de arroz y ensalada.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Recomendado</span>
+                                <span class="tag seafood">Camarón</span>
+                            </div>
+                            <button class="view-images-btn" data-item="camarones-ajillo">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Camarones Empanizados -->
+                <div class="menu-item" data-category="camarones">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camarones Empanizados">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Camarones Empanizados</h3>
+                            <span class="item-price">$199</span>
+                        </div>
+                        <p class="item-desc">Camarones grandes rebozados en pan molido y especias, fritos hasta alcanzar un dorado perfecto. Servidos con salsa tártara y limón.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag seafood">Camarón</span>
+                                <span class="tag">Crujiente</span>
+                            </div>
+                            <button class="view-images-btn" data-item="camarones-empanizados">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pescados -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-fish"></i>
+                Pescados Frescos
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Filete de Huachinango -->
+                <div class="menu-item" data-category="pescado">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Filete de Huachinango">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Filete de Huachinango</h3>
+                            <span class="item-price">$259</span>
+                        </div>
+                        <p class="item-desc">Filete de huachinango a la plancha o empanizado, bañado en salsa de mantequilla con ajo y perejil. Acompañado de verduras al vapor y arroz.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Especialidad</span>
+                                <span class="tag seafood">Pescado</span>
+                            </div>
+                            <button class="view-images-btn" data-item="huachinango">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mojarra Frita -->
+                <div class="menu-item" data-category="pescado">
+                    <div class="item-images">
+                        <img src="https://i.elhorizonte.mx/img/eh/2540000/2544720_mojarrafrita2.jpg" alt="Mojarra Frita">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Mojarra Frita Entera</h3>
+                            <span class="item-price">$219</span>
+                        </div>
+                        <p class="item-desc">Mojarra fresca frita a la perfección, crujiente por fuera y jugosa por dentro. Acompañada de arroz, ensalada y tortillas hechas a mano.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Tradicional</span>
+                                <span class="tag seafood">Pescado</span>
+                            </div>
+                            <button class="view-images-btn" data-item="mojarra">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ostiones -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-water"></i>
+                Ostiones Frescos
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Ostiones Naturales -->
+                <div class="menu-item" data-category="ostiones">
+                    <div class="item-images">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/0c/a0/2e/ostiones-naturales-deliciosos.jpg" alt="Ostiones Naturales">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Ostiones Naturales</h3>
+                            <span class="item-price">$279</span>
+                        </div>
+                        <p class="item-desc">Docena de ostiones frescos de las mejores bahías, servidos en su concha con limón, salsa picante y cebolla morada. Frescura garantizada.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag new">Premium</span>
+                                <span class="tag seafood">Fresco</span>
+                            </div>
+                            <button class="view-images-btn" data-item="ostiones">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Especialidades -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-crown"></i>
+                Especialidades de la Casa
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Paella Marinera -->
+                <div class="menu-item" data-category="especialidades">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paella Marinera">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 4 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Paella Marinera</h3>
+                            <span class="item-price">$449</span>
+                        </div>
+                        <p class="item-desc">Auténtica paella española con arroz bomba, camarones, calamares, mejillones, almejas y pescado. Preparada en sartén especial y sazonada con azafrán.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Especialidad</span>
+                                <span class="tag seafood">Para compartir</span>
+                            </div>
+                            <button class="view-images-btn" data-item="paella">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coctel de Campechana -->
+                <div class="menu-item" data-category="especialidades">
+                    <div class="item-images">
+                        <img src="https://yosoyvendedor.com/source/d63c63008746573029cabf046b8b8301/coctel_grande_campechano.jpg" alt="Coctel de Campechana">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Coctel Campechana Grande</h3>
+                            <span class="item-price">$289</span>
+                        </div>
+                        <p class="item-desc">Mezcla de camarón, pulpo, ostión, calamar y abulón en salsa especial de cátsup, jugo de limón, cilantro y aguacate. Servido en copa grande.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Favorito</span>
+                                <span class="tag seafood">Mariscos</span>
+                            </div>
+                            <button class="view-images-btn" data-item="campechana">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bebidas -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <i class="fas fa-glass-cheers"></i>
+                Bebidas Refrescantes
+            </h2>
+            
+            <div class="menu-items">
+                <!-- Michelada de Camarón -->
+                <div class="menu-item" data-category="bebidas">
+                    <div class="item-images">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Michelada de Camarón">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 3 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Michelada de Camarón</h3>
+                            <span class="item-price">$129</span>
+                        </div>
+                        <p class="item-desc">Cerveza clara con nuestra mezcla secreta de salsas, limón, chamoy y un camarón fresco como garnish. El acompañante perfecto para tus mariscos.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag popular">Más Pedida</span>
+                                <span class="tag">Bebida</span>
+                            </div>
+                            <button class="view-images-btn" data-item="michelada">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agua de Horchata -->
+                <div class="menu-item" data-category="bebidas">
+                    <div class="item-images">
+                        <img src="https://mahatmarice.com/wp-content/uploads/2020/04/GettyImages-493110032.jpg" alt="Agua de Horchata">
+                        <div class="image-counter">
+                            <i class="fas fa-images"></i> 2 fotos
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-name">Agua de Horchata</h3>
+                            <span class="item-price">$49</span>
+                        </div>
+                        <p class="item-desc">Refrescante agua de horchata hecha con arroz, canela y vainilla. Endulzada al gusto y servida bien fría. La mejor para acompañar platillos picantes.</p>
+                        <div class="item-details">
+                            <div class="item-tags">
+                                <span class="tag">Refrescante</span>
+                                <span class="tag">Sin alcohol</span>
+                            </div>
+                            <button class="view-images-btn" data-item="horchata">
+                                <i class="fas fa-eye"></i> Ver fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Galería de Imágenes -->
+    <div class="image-gallery" id="imageGallery">
+        <div class="close-gallery" id="closeGallery">&times;</div>
+        <div class="gallery-content">
+            <img id="galleryImage" src="" alt="">
+            <div class="gallery-nav">
+                <button id="prevBtn">
+                    <i class="fas fa-chevron-left"></i> Anterior
+                </button>
+                <div class="image-counter-gallery" id="imageCounter">1 / 3</div>
+                <button id="nextBtn">
+                    Siguiente <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>La Marisquería</h3>
+                <p>Av. del Mar 123, Zona Costera</p>
+                <p>Ciudad del Mar, México</p>
+                <p>Horario: 12:00 - 22:00 hrs</p>
+                <p>Abierto todos los días</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> 55 1234 5678</p>
+                <p><i class="fas fa-envelope"></i> info@lamarisqueria.com</p>
+                <p><i class="fas fa-clock"></i> Reservaciones recomendadas</p>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <p>• Comida para llevar</p>
+                <p>• Servicio a domicilio</p>
+                <p>• Eventos y banquetes</p>
+                <p>• Estacionamiento gratuito</p>
+                <p>• Terraza con vista al mar</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2023 La Marisquería. Todos los derechos reservados. | Mariscos frescos todos los días.
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5215512345678" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
