@@ -1,4 +1,3 @@
-// Datos de todos los ejemplos
 const allExamples = [
     // MENÚS QR
     {
@@ -31,10 +30,30 @@ const allExamples = [
         features: ["Animaciones", "Carta de Bebidas", "Happy Hour", "Moderno"],
         demoUrl: "servicios/menus/menu3/bar-rincon.html"
     },
+    {
+        id: 4,
+        title: "LA MARISQUERÍA",
+        category: "menu",
+        type: "Menú QR",
+        description: "Carta de mariscos frescos, preparados al momento por nuestros chefs especializados",
+        image: "https://hevea.es/wp-content/uploads/Decoracion-elegante-para-restaurante-de-lujo-o-de-diseno.jpg",
+        features: ["Diseño Claro", "Especialidades", "Promociones", "QR Dinámico"],
+        demoUrl: "servicios/menus/menu4/index.html"
+    },
+    {
+        id: 5,
+        title: "Sushi Naruto",
+        category: "menu",
+        type: "Menú QR",
+        description: "Carta de sushi con diseño moderno y animaciones",
+        image: "https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2019/07/asai-kaiseki-cuisine.jpg?fit=1024%2C683&ssl=1",
+        features: ["Animaciones", "Carta de Bebidas", "Happy Hour", "Moderno"],
+        demoUrl: "servicios/menus/menu5/index.html"
+    },
 
     // CARTAS PERSONALIZADAS
     {
-        id: 4,
+        id: 6,
         title: "Boda Sofía & Alejandro",
         category: "carta",
         type: "Carta Digital",
@@ -44,7 +63,7 @@ const allExamples = [
         demoUrl: "servicios/cartas/carta1/carta.html"
     },
     {
-        id: 5,
+        id: 7,
         title: "Cumpleaños 30 Años",
         category: "carta",
         type: "Invitación Digital",
@@ -54,7 +73,7 @@ const allExamples = [
         demoUrl: "servicios/cartas/carta2/index.html"
     },
     {
-        id: 6,
+        id: 8,
         title: "Carta de Amor Eterna",
         category: "carta",
         type: "Carta de Amor",
@@ -66,7 +85,7 @@ const allExamples = [
 
     // PÁGINAS WEB
     {
-        id: 7,
+        id: 9,
         title: "Restaurante Delicias",
         category: "web",
         type: "Sitio Web",
@@ -76,7 +95,7 @@ const allExamples = [
         demoUrl: "servicios/paginas/pag1/index.html"
     },
     {
-        id: 8,
+        id: 10,
         title: "Cafetería Aroma",
         category: "web",
         type: "Landing Page",
@@ -312,3 +331,4 @@ document.addEventListener('DOMContentLoaded', function() {
     showFilters();
 
 });
+
