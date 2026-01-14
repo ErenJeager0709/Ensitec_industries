@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | The Rock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/rock-music.png">
+    <style>
+        /* Estilos adicionales para eventos */
+        .events-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFydHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .events-calendar {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .calendar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .calendar-month {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .calendar-nav button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .calendar-nav button:hover {
+            background: #b38914;
+        }
+        
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+        }
+        
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        
+        .calendar-day {
+            height: 80px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .calendar-day:hover {
+            background-color: rgba(212, 160, 23, 0.1);
+        }
+        
+        .calendar-day.empty {
+            background-color: #f5f5f5;
+            border: none;
+        }
+        
+        .calendar-day.has-event {
+            border-color: var(--primary-color);
+            background-color: rgba(212, 160, 23, 0.05);
+        }
+        
+        .day-number {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .event-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .event-highlight {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+        }
+        
+        .events-list {
+            padding: 80px 0;
+        }
+        
+        .event-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .event-details {
+            padding: 30px;
+        }
+        
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .event-date i {
+            font-size: 20px;
+        }
+        
+        .event-details h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .event-description {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .event-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-color);
+        }
+        
+        .info-item i {
+            color: var(--primary-color);
+        }
+        
+        .event-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .promos-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .promo-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .promo-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            font-weight: 600;
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .promo-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .promo-content {
+            padding: 25px;
+        }
+        
+        .promo-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .promo-content p {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        .promo-valid {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .events-cta {
+            background: linear-gradient(rgba(212, 160, 23, 0.9), rgba(179, 137, 20, 0.9)), url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFydHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .events-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .events-cta p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .event-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-image {
+                height: 200px;
+            }
+            
+            .calendar-container {
+                padding: 20px;
+            }
+            
+            .calendar-day {
+                height: 60px;
+                padding: 5px;
+            }
+            
+            .events-cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-mountain"></i>
+                    <span class="logo-text">THE ROCK</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="events.html" class="nav-link active">Eventos</a></li>
+                    <li><a href="contact.html" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="contact.html#reservation" class="btn btn-primary">Reservar</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Eventos -->
+    <section class="events-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Eventos & <span class="highlight">Promociones</span></h1>
+                <p>Vive noches inolvidables con nuestros eventos especiales y promociones exclusivas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario de Eventos -->
+    <section class="events-calendar">
+        <div class="container">
+            <h2 class="section-title">Calendario de <span class="highlight">Eventos</span></h2>
+            <p class="section-subtitle">No te pierdas nuestras próximas actividades especiales</p>
+            
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-month">Octubre 2023</div>
+                    <div class="calendar-nav">
+                        <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="calendar-weekdays">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+                
+                <div class="calendar-days" id="calendar-days">
+                    <!-- Los días se generan con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Destacados -->
+    <section class="events-list">
+        <div class="container">
+            <h2 class="section-title">Eventos <span class="highlight">Destacados</span></h2>
+            <p class="section-subtitle">Experiencias únicas que no te puedes perder</p>
+            
+            <div class="events-container">
+                <!-- Evento 1 -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpdmUlMjBtdXNpY3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Viernes 15 de Octubre | 9:00 PM</span>
+                        </div>
+                        <h3>Noche de Rock en Vivo</h3>
+                        <p class="event-description">Disfruta de la mejor música rock en vivo con bandas locales. Cover especial y promociones en cervezas y cocteles toda la noche.</p>
+                        
+                        <div class="event-info">
+                            <div class="info-item">
+                                <i class="fas fa-music"></i>
+                                <span>Bandas en vivo</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>Cover: $150 por persona</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>Capacidad limitada</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-price">Incluye 1 bebida de bienvenida</div>
+                        <a href="contact.html#reservation" class="btn btn-primary">Reservar Lugar</a>
+                    </div>
+                </div>
+                
+                <!-- Evento 2 -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1567690346811-22291ebe92ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29jdGFpbCUyMHRhc3Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Sábado 23 de Octubre | 7:00 PM</span>
+                        </div>
+                        <h3>Masterclass de Coctelería</h3>
+                        <p class="event-description">Aprende a preparar cocteles exclusivos con nuestros mixólogos expertos. Degustación incluida y certificado de participación.</p>
+                        
+                        <div class="event-info">
+                            <div class="info-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Clase práctica</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duración: 2 horas</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-wine-glass-alt"></i>
+                                <span>5 cocteles incluidos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-price">$899 por persona</div>
+                        <a href="contact.html#reservation" class="btn btn-primary">Inscribirse</a>
+                    </div>
+                </div>
+                
+                <!-- Evento 3 -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGFtYnVyZ3VlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Martes 26 de Octubre | Todo el día</span>
+                        </div>
+                        <h3>Burger Fest</h3>
+                        <p class="event-description">Festival dedicado a las hamburguesas. Prueba nuestras creaciones especiales, participa en concursos y gana premios.</p>
+                        
+                        <div class="event-info">
+                            <div class="info-item">
+                                <i class="fas fa-hamburger"></i>
+                                <span>Hamburguesas especiales</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Concursos y premios</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-beer"></i>
+                                <span>2x1 en micheladas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-price">Promociones especiales todo el día</div>
+                        <a href="contact.html#reservation" class="btn btn-primary">Reservar Mesa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones -->
+    <section class="promos-section">
+        <div class="container">
+            <h2 class="section-title">Promociones <span class="highlight">Especiales</span></h2>
+            <p class="section-subtitle">Aprovecha nuestras ofertas exclusivas</p>
+            
+            <div class="promos-grid">
+                <!-- Promo 1 -->
+                <div class="promo-card">
+                    <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7ff58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFwcHklMjBob3VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60');">
+                        <div class="promo-badge">Happy Hour</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Happy Hour Extendido</h3>
+                        <p>De 4:00 PM a 8:00 PM disfruta de 2x1 en todas nuestras micheladas y cocteles de la casa.</p>
+                        <div class="promo-valid">Válido de lunes a jueves</div>
+                    </div>
+                </div>
+                
+                <!-- Promo 2 -->
+                <div class="promo-card">
+                    <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3VlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+                        <div class="promo-badge">Combo</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Combo "The Rock"</h3>
+                        <p>Hamburguesa especial + michelada volcánica + papas fritas por solo $19.99 (Ahorra $5).</p>
+                        <div class="promo-valid">Todo el mes de octubre</div>
+                    </div>
+                </div>
+                
+                <!-- Promo 3 -->
+                <div class="promo-card">
+                    <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1612911470236-86480c33f5a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWljaGVsYWRhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60');">
+                        <div class="promo-badge">Jueves</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Jueves de Michelada</h3>
+                        <p>Todos los jueves, micheladas a mitad de precio de 6:00 PM a 10:00 PM.</p>
+                        <div class="promo-valid">Todos los jueves</div>
+                    </div>
+                </div>
+                
+                <!-- Promo 4 -->
+                <div class="promo-card">
+                    <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1542484628-6d3c8f2a4e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBwYXJ0eXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+                        <div class="promo-badge">Cumpleaños</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Cumpleaños Gratis</h3>
+                        <p>Celebra tu cumpleaños con nosotros y el cumpleañero no paga su comida (presentando INE).</p>
+                        <div class="promo-valid">Reserva con 48 horas de anticipación</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Privados -->
+    <section class="events-list">
+        <div class="container">
+            <h2 class="section-title">Eventos <span class="highlight">Privados</span></h2>
+            <p class="section-subtitle">Celebra tus ocasiones especiales con nosotros</p>
+            
+            <div class="events-container">
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdlZGRpbmclMjByZWNlcHRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="event-details">
+                        <h3>Paquetes para Eventos Especiales</h3>
+                        <p class="event-description">Ofrecemos paquetes personalizados para bodas, aniversarios, graduaciones, fiestas corporativas y más. Incluye:</p>
+                        
+                        <ul class="event-features">
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Espacio exclusivo para tu evento</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Menú personalizado</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Barra libre o consumo controlado</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Decoración temática</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Sistema de sonido y pantalla</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Personal dedicado para tu evento</li>
+                        </ul>
+                        
+                        <p class="event-description">Contáctanos para cotizar tu evento personalizado.</p>
+                        
+                        <a href="contact.html" class="btn btn-primary">Solicitar Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="events-cta">
+        <div class="container">
+            <h2>¿Quieres organizar un evento con nosotros?</h2>
+            <p>Contáctanos y creemos juntos una experiencia inolvidable</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contactar para Eventos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-mountain"></i>
+                        <span>THE ROCK</span>
+                    </a>
+                    <p class="footer-description">Restaurante & Bar especializado en comida gourmet, micheladas artesanales y cocteles exclusivos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="events.html">Eventos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Horario</h3>
+                    <ul class="footer-links">
+                        <li>Lun-Jue: 4:00 PM - 12:00 AM</li>
+                        <li>Vie-Sáb: 2:00 PM - 2:00 AM</li>
+                        <li>Dom: 2:00 PM - 10:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal #123, Centro</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@therock.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> The Rock Restaurante & Bar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Calendario interactivo
+        const monthElement = document.querySelector('.calendar-month');
+        const calendarDays = document.getElementById('calendar-days');
+        const prevBtn = document.getElementById('prev-month');
+        const nextBtn = document.getElementById('next-month');
+        
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+        
+        const months = [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+        
+        // Eventos en el calendario (día: tipo de evento)
+        const events = {
+            5: "happy-hour",
+            12: "live-music",
+            15: "live-music",
+            19: "tasting",
+            23: "masterclass",
+            26: "burger-fest",
+            28: "happy-hour"
+        };
+        
+        function renderCalendar() {
+            // Actualizar título del mes
+            monthElement.textContent = `${months[currentMonth]} ${currentYear}`;
+            
+            // Limpiar días anteriores
+            calendarDays.innerHTML = '';
+            
+            // Primer día del mes
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            // Último día del mes
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            // Día de la semana del primer día (0 = domingo, 1 = lunes, etc.)
+            const firstDayIndex = firstDay.getDay();
+            // Días en el mes
+            const daysInMonth = lastDay.getDate();
+            
+            // Días vacíos al inicio
+            for (let i = 0; i < firstDayIndex; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('calendar-day', 'empty');
+                calendarDays.appendChild(emptyDay);
+            }
+            
+            // Días del mes
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('calendar-day');
+                
+                // Marcar si es hoy
+                if (day === currentDate.getDate() && 
+                    currentMonth === currentDate.getMonth() && 
+                    currentYear === currentDate.getFullYear()) {
+                    dayElement.style.borderColor = 'var(--primary-color)';
+                    dayElement.style.backgroundColor = 'rgba(212, 160, 23, 0.1)';
+                }
+                
+                // Agregar número del día
+                const dayNumber = document.createElement('div');
+                dayNumber.classList.add('day-number');
+                dayNumber.textContent = day;
+                dayElement.appendChild(dayNumber);
+                
+                // Agregar evento si existe
+                if (events[day]) {
+                    dayElement.classList.add('has-event');
+                    
+                    const eventDot = document.createElement('div');
+                    eventDot.classList.add('event-dot');
+                    dayElement.appendChild(eventDot);
+                    
+                    // Agregar texto para eventos importantes
+                    if (day === 15) {
+                        const eventHighlight = document.createElement('div');
+                        eventHighlight.classList.add('event-highlight');
+                        eventHighlight.textContent = 'Rock';
+                        dayElement.appendChild(eventHighlight);
+                    } else if (day === 23) {
+                        const eventHighlight = document.createElement('div');
+                        eventHighlight.classList.add('event-highlight');
+                        eventHighlight.textContent = 'Clase';
+                        dayElement.appendChild(eventHighlight);
+                    } else if (day === 26) {
+                        const eventHighlight = document.createElement('div');
+                        eventHighlight.classList.add('event-highlight');
+                        eventHighlight.textContent = 'Burger';
+                        dayElement.appendChild(eventHighlight);
+                    }
+                }
+                
+                calendarDays.appendChild(dayElement);
+            }
+        }
+        
+        // Botones de navegación
+        prevBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        });
+        
+        // Inicializar calendario
+        renderCalendar();
+        
+        // Actualizar año en footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
