@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | The Rock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/rock-music.png">
+    <style>
+        /* Estilos adicionales para contacto */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJhciUyMGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-form-container, .reservation-form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            margin-top: 50px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(212, 160, 23, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .info-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .info-card p {
+            color: var(--gray-color);
+            margin-bottom: 10px;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-table td {
+            padding: 12px 0;
+        }
+        
+        .hours-table td:first-child {
+            font-weight: 600;
+        }
+        
+        .map-container {
+            margin-top: 50px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .reservation-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .reservation-form-container h2 {
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-note {
+            font-size: 14px;
+            color: var(--gray-color);
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form-container, .reservation-form-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-mountain"></i>
+                    <span class="logo-text">THE ROCK</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="events.html" class="nav-link">Eventos</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contacto</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#reservation" class="btn btn-primary">Reservar</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Contacto -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Contácta<span class="highlight">nos</span></h1>
+                <p>Estamos aquí para atenderte y hacer de tu visita una experiencia inolvidable</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Envíanos un <span class="highlight">Mensaje</span></h2>
+            <p class="section-subtitle">Responderemos a la brevedad posible</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <form id="contact-form">
+                        <div id="contact-success" class="success-message">
+                            ¡Mensaje enviado con éxito! Te contactaremos pronto.
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Nombre completo *</label>
+                            <input type="text" id="contact-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Correo electrónico *</label>
+                            <input type="email" id="contact-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Teléfono</label>
+                            <input type="tel" id="contact-phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Asunto *</label>
+                            <select id="contact-subject" class="form-control" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="reservation">Reservación</option>
+                                <option value="event">Evento privado</option>
+                                <option value="complaint">Queja o sugerencia</option>
+                                <option value="information">Información general</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Mensaje *</label>
+                            <textarea id="contact-message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 18px;">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-container">
+                    <h3>Información de Contacto</h3>
+                    <p>Puedes contactarnos por cualquiera de los siguientes medios:</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Dirección</h3>
+                            <p>Av. Principal #123</p>
+                            <p>Colonia Centro</p>
+                            <p>Ciudad, Estado, CP 12345</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Teléfonos</h3>
+                            <p>(555) 123-4567</p>
+                            <p>(555) 987-6543</p>
+                            <p>WhatsApp: (555) 555-5555</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Correo Electrónico</h3>
+                            <p>info@therock.com</p>
+                            <p>reservaciones@therock.com</p>
+                            <p>eventos@therock.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hours-container">
+                        <h3 style="margin-top: 40px;">Horario de Atención</h3>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Lunes a Jueves</td>
+                                <td>4:00 PM - 12:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Viernes y Sábado</td>
+                                <td>2:00 PM - 2:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Domingo</td>
+                                <td>2:00 PM - 10:00 PM</td>
+                            </tr>
+                        </table>
+                        <p class="form-note">* Para eventos privados fuera de horario, contáctanos directamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-section" style="padding: 0 0 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Nuestra <span class="highlight">Ubicación</span></h2>
+            <p class="section-subtitle">Visítanos y disfruta de la experiencia The Rock</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888516178969!2d-99.1739876845931!3d19.427020746122194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1681234567890!5m2!1ses!2smx" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="info-grid" style="margin-top: 50px;">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Estacionamiento</h3>
+                    <p>Contamos con estacionamiento gratuito para clientes (capacidad limitada).</p>
+                    <p>Valet parking disponible viernes y sábado.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Cómo Llegar</h3>
+                    <p>Metro: Estación Centro (línea azul)</p>
+                    <p>Metrobús: Línea 1, parada Reforma</p>
+                    <p>Rutas de autobús: 1, 4, 7, 12</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>Accesibilidad</h3>
+                    <p>Contamos con rampas de acceso y baños adaptados para personas con movilidad reducida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reservación -->
+    <section id="reservation" class="reservation-section">
+        <div class="container">
+            <h2 class="section-title">Reserva tu <span class="highlight">Mesa</span></h2>
+            <p class="section-subtitle">Asegura tu lugar y evita esperas</p>
+            
+            <div class="reservation-form-container">
+                <form id="reservation-form">
+                    <div id="reservation-success" class="success-message">
+                        ¡Reserva solicitada con éxito! Te contactaremos para confirmar.
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-name">Nombre completo *</label>
+                            <input type="text" id="reservation-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reservation-email">Correo electrónico *</label>
+                            <input type="email" id="reservation-email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-phone">Teléfono *</label>
+                            <input type="tel" id="reservation-phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reservation-people">Número de personas *</label>
+                            <select id="reservation-people" class="form-control" required>
+                                <option value="">Selecciona</option>
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3">3 personas</option>
+                                <option value="4">4 personas</option>
+                                <option value="5">5 personas</option>
+                                <option value="6">6 personas</option>
+                                <option value="7">7 personas</option>
+                                <option value="8">8 personas</option>
+                                <option value="9">9 personas</option>
+                                <option value="10+">10 o más personas</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-date">Fecha *</label>
+                            <input type="date" id="reservation-date" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reservation-time">Hora *</label>
+                            <select id="reservation-time" class="form-control" required>
+                                <option value="">Selecciona</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="16:30">4:30 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                                <option value="21:30">9:30 PM</option>
+                                <option value="22:00">10:00 PM</option>
+                                <option value="22:30">10:30 PM</option>
+                                <option value="23:00">11:00 PM</option>
+                                <option value="23:30">11:30 PM</option>
+                                <option value="00:00">12:00 AM</option>
+                                <option value="00:30">12:30 AM</option>
+                                <option value="01:00">1:00 AM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reservation-occasion">Ocasión especial (opcional)</label>
+                        <select id="reservation-occasion" class="form-control">
+                            <option value="">Selecciona una ocasión</option>
+                            <option value="none">Sin ocasión especial</option>
+                            <option value="birthday">Cumpleaños</option>
+                            <option value="anniversary">Aniversario</option>
+                            <option value="date">Cita</option>
+                            <option value="business">Reunión de negocios</option>
+                            <option value="family">Reunión familiar</option>
+                            <option value="other">Otra</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reservation-notes">Notas adicionales (opcional)</label>
+                        <textarea id="reservation-notes" class="form-control" placeholder="Alergias alimenticias, requerimientos especiales, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-note">
+                        * Las reservaciones se confirman por teléfono o correo electrónico. Para grupos mayores a 8 personas, contáctanos directamente.
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 18px; margin-top: 20px;">
+                        Solicitar Reservación
+                    </button>
+                </form>
+            </div>
+            
+            <div class="info-grid" style="margin-top: 50px;">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Política de Reservaciones</h3>
+                    <p>Las reservaciones se mantienen por 15 minutos después de la hora acordada.</p>
+                    <p>Para cancelaciones, avisar con al menos 2 horas de anticipación.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Grupos Grandes</h3>
+                    <p>Para grupos de más de 8 personas, ofrecemos menús especiales y áreas privadas.</p>
+                    <p>Contáctanos para eventos corporativos o celebraciones.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Celebraciones Especiales</h3>
+                    <p>Celebra tu cumpleaños con nosotros y obtén un postre especial de cortesía.</p>
+                    <p>Decoración especial disponible (reserva con anticipación).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Síguenos en <span class="highlight">Redes Sociales</span></h2>
+            <p class="section-subtitle">Mantente al día con nuestras novedades, promociones y eventos</p>
+            
+            <div class="social-media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+                <a href="#" class="social-media-card" style="background-color: #1877F2; color: white; padding: 30px; border-radius: var(--border-radius); text-align: center; text-decoration: none; transition: var(--transition);">
+                    <i class="fab fa-facebook-f" style="font-size: 40px; margin-bottom: 15px;"></i>
+                    <h3>Facebook</h3>
+                    <p>@TheRockRestaurant</p>
+                </a>
+                
+                <a href="#" class="social-media-card" style="background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45); color: white; padding: 30px; border-radius: var(--border-radius); text-align: center; text-decoration: none; transition: var(--transition);">
+                    <i class="fab fa-instagram" style="font-size: 40px; margin-bottom: 15px;"></i>
+                    <h3>Instagram</h3>
+                    <p>@therock.restaurant</p>
+                </a>
+                
+                <a href="#" class="social-media-card" style="background-color: #1DA1F2; color: white; padding: 30px; border-radius: var(--border-radius); text-align: center; text-decoration: none; transition: var(--transition);">
+                    <i class="fab fa-twitter" style="font-size: 40px; margin-bottom: 15px;"></i>
+                    <h3>Twitter</h3>
+                    <p>@TheRockBar</p>
+                </a>
+                
+                <a href="#" class="social-media-card" style="background-color: #000000; color: white; padding: 30px; border-radius: var(--border-radius); text-align: center; text-decoration: none; transition: var(--transition);">
+                    <i class="fab fa-tiktok" style="font-size: 40px; margin-bottom: 15px;"></i>
+                    <h3>TikTok</h3>
+                    <p>@therockfood</p>
+                </a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; color: var(--gray-color);">
+                Comparte tus experiencias en The Rock usando el hashtag <strong>#TheRockExperience</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-mountain"></i>
+                        <span>THE ROCK</span>
+                    </a>
+                    <p class="footer-description">Restaurante & Bar especializado en comida gourmet, micheladas artesanales y cocteles exclusivos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="events.html">Eventos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Horario</h3>
+                    <ul class="footer-links">
+                        <li>Lun-Jue: 4:00 PM - 12:00 AM</li>
+                        <li>Vie-Sáb: 2:00 PM - 2:00 AM</li>
+                        <li>Dom: 2:00 PM - 10:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal #123, Centro</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@therock.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> The Rock Restaurante & Bar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Configurar fecha mínima para reservación (hoy)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        const formattedDate = tomorrow.toISOString().split('T')[0];
+        document.getElementById('reservation-date').min = formattedDate;
+        
+        // Configurar fecha por defecto (mañana)
+        document.getElementById('reservation-date').value = formattedDate;
+        
+        // Manejo del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Por favor, completa todos los campos requeridos.');
+                return;
+            }
+            
+            // Mostrar mensaje de éxito
+            const successMessage = document.getElementById('contact-success');
+            successMessage.style.display = 'block';
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            console.log('Formulario de contacto enviado:', { name, email, subject, message });
+            
+            // Limpiar formulario
+            this.reset();
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Manejo del formulario de reservación
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reservation-name').value;
+            const email = document.getElementById('reservation-email').value;
+            const phone = document.getElementById('reservation-phone').value;
+            const people = document.getElementById('reservation-people').value;
+            const date = document.getElementById('reservation-date').value;
+            const time = document.getElementById('reservation-time').value;
+            
+            if (!name || !email || !phone || !people || !date || !time) {
+                alert('Por favor, completa todos los campos requeridos.');
+                return;
+            }
+            
+            // Mostrar mensaje de éxito
+            const successMessage = document.getElementById('reservation-success');
+            successMessage.style.display = 'block';
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            console.log('Reserva solicitada:', { name, email, phone, people, date, time });
+            
+            // Limpiar formulario (excepto fecha)
+            document.getElementById('reservation-name').value = '';
+            document.getElementById('reservation-email').value = '';
+            document.getElementById('reservation-phone').value = '';
+            document.getElementById('reservation-people').value = '';
+            document.getElementById('reservation-time').value = '';
+            document.getElementById('reservation-occasion').value = '';
+            document.getElementById('reservation-notes').value = '';
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Actualizar año en footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Navegación suave para enlace de reservación en header
+        document.querySelector('a[href="#reservation"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            const reservationSection = document.getElementById('reservation');
+            if (reservationSection) {
+                window.scrollTo({
+                    top: reservationSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
