@@ -50,10 +50,20 @@ const allExamples = [
         features: ["Animaciones", "Carta de Bebidas", "Happy Hour", "Moderno"],
         demoUrl: "servicios/menus/menu5/index.html"
     },
+    {
+        id: 6,
+        title: "THE ROCK",
+        category: "menu",
+        type: "Menú QR",
+        description: "Menú elegante para restaurante",
+        image: "https://cdn.forbes.com.mx/2022/06/bares-speakeasy-mexico-1280x720.gif",
+        features: ["Animaciones", "Carta de Bebidas", "Happy Hour", "Moderno"],
+        demoUrl: "servicios/menus/menu6/index.html"
+    },
 
     // CARTAS PERSONALIZADAS
     {
-        id: 6,
+        id: 7,
         title: "Boda Sofía & Alejandro",
         category: "carta",
         type: "Carta Digital",
@@ -63,7 +73,7 @@ const allExamples = [
         demoUrl: "servicios/cartas/carta1/carta.html"
     },
     {
-        id: 7,
+        id: 8,
         title: "Cumpleaños 30 Años",
         category: "carta",
         type: "Invitación Digital",
@@ -73,7 +83,7 @@ const allExamples = [
         demoUrl: "servicios/cartas/carta2/index.html"
     },
     {
-        id: 8,
+        id: 9,
         title: "Carta de Amor Eterna",
         category: "carta",
         type: "Carta de Amor",
@@ -85,7 +95,7 @@ const allExamples = [
 
     // PÁGINAS WEB
     {
-        id: 9,
+        id: 10,
         title: "Restaurante Delicias",
         category: "web",
         type: "Sitio Web",
@@ -95,7 +105,7 @@ const allExamples = [
         demoUrl: "servicios/paginas/pag1/index.html"
     },
     {
-        id: 10,
+        id: 11,
         title: "Cafetería Aroma",
         category: "web",
         type: "Landing Page",
@@ -105,7 +115,7 @@ const allExamples = [
         demoUrl: "servicios/paginas/pag2/index.html"
     },
     {
-        id: 11,
+        id: 12,
         title: "Restaurante THE ROCK",
         category: "web",
         type: "Landing Page",
@@ -341,5 +351,6 @@ document.addEventListener('DOMContentLoaded', function() {
     showFilters();
 
 });
+
 
 
