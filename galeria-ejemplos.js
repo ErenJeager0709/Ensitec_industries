@@ -104,6 +104,16 @@ const allExamples = [
         features: ["Landing Page", "Google Maps", "Horarios", "Especialidades"],
         demoUrl: "servicios/paginas/pag2/index.html"
     },
+    {
+        id: 11,
+        title: "Restaurante THE ROCK",
+        category: "web",
+        type: "Landing Page",
+        description: "Página web completa para restaurante con reservaciones online y menú digital",
+        image: "https://static.wixstatic.com/media/7dac27_1f60b02afa80463f9568f3a66dd4533a~mv2.jpg/v1/fill/w_670,h_376,al_c,lg_1,q_80,enc_avif,quality_auto/7dac27_1f60b02afa80463f9568f3a66dd4533a~mv2.jpg",
+        features: ["Landing Page", "Google Maps", "Horarios", "Especialidades"],
+        demoUrl: "servicios/paginas/pag4/index.html"
+    },
 
     // MASCOTAS
     // {
@@ -331,4 +341,5 @@ document.addEventListener('DOMContentLoaded', function() {
     showFilters();
 
 });
+
 
